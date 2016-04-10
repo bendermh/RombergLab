@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		825D9F05108BD2E40009E075 /* WiiRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 825D9F01108BD2E40009E075 /* WiiRemote.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		825D9F06108BD2E40009E075 /* WiiRemoteDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 825D9F03108BD2E40009E075 /* WiiRemoteDiscovery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825D9F09108BD2FD0009E075 /* IOBluetooth.framework */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CF0352471C0CC44500B448CD /* Success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF0352461C0CC44500B448CD /* Success.m4a */; };
+		CF25558C1C0B85700008C853 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF25558B1C0B85700008C853 /* Images.xcassets */; };
+		CF41733E1C10F9EE00A27AB0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */; };
+		CF4173481C10FB9500A27AB0 /* SecondWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173471C10FB9500A27AB0 /* SecondWindowController.m */; };
+		CF41734D1C10FD9800A27AB0 /* ThirdWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF41734B1C10FD9800A27AB0 /* ThirdWindowController.m */; };
+		CF4173511C10FDC300A27AB0 /* FourthWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173501C10FDC300A27AB0 /* FourthWindowController.m */; };
+		CF4173541C10FE0100A27AB0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173531C10FE0100A27AB0 /* ThirdViewController.m */; };
+		CF4173571C10FE2900A27AB0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173561C10FE2900A27AB0 /* FourthViewController.m */; };
+		CF665F4D1C0B83900093F569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665F4F1C0B83900093F569 /* Main.storyboard */; };
+		CF7E5DDD1C0F7ABA00214499 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CF7E5DDC1C0F7ABA00214499 /* Credits.html */; };
+		CF91D4B71C0E44AF00C0641A /* Disconnect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */; };
+		CF9A38191C134972007106F8 /* contacto.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF9A38181C134972007106F8 /* contacto.m4a */; };
+		CFAF34931C11381100F72F32 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFAF34881C1137DD00F72F32 /* CorePlot.framework */; };
+		CFAF34951C11382D00F72F32 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFAF34881C1137DD00F72F32 /* CorePlot.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFC285BF1C1116DA0017601E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC285BE1C1116DA0017601E /* QuartzCore.framework */; };
+		CFFDE6CE1C0B822500E08C64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */; };
+		CFFDE6CF1C0B822500E08C64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFDE6CD1C0B822500E08C64 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFAF34871C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = "CorePlot Mac";
+		};
+		CFAF34891C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = "UnitTests Mac";
+		};
+		CFAF348B1C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09781A46185200D45436;
+			remoteInfo = "CorePlot iOS";
+		};
+		CFAF348D1C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09821A46185300D45436;
+			remoteInfo = "UnitTests iOS";
+		};
+		CFAF348F1C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09BA1A4619A900D45436;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		CFAF34911C1137DD00F72F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09C41A4619A900D45436;
+			remoteInfo = "CorePlot-CocoaTouchTests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFAF34941C11382500F72F32 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CFAF34951C11382D00F72F32 /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* RombergLab_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RombergLab_Prefix.pch; sourceTree = "<group>"; };
+		825D9EFF108BD2E40009E075 /* Mii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mii.h; sourceTree = "<group>"; };
+		825D9F00108BD2E40009E075 /* WiiRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemote.h; sourceTree = "<group>"; };
+		825D9F01108BD2E40009E075 /* WiiRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiRemote.m; sourceTree = "<group>"; };
+		825D9F02108BD2E40009E075 /* WiiRemoteDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemoteDiscovery.h; sourceTree = "<group>"; };
+		825D9F03108BD2E40009E075 /* WiiRemoteDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiRemoteDiscovery.m; sourceTree = "<group>"; };
+		825D9F04108BD2E40009E075 /* WiiRemotePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemotePrivate.h; sourceTree = "<group>"; };
+		825D9F09108BD2FD0009E075 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* RombergLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RombergLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0352461C0CC44500B448CD /* Success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Success.m4a; path = Sonidos/Success.m4a; sourceTree = "<group>"; };
+		CF22810C1C165B37008F4140 /* RombergLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RombergLab.entitlements; path = RombergLab/RombergLab.entitlements; sourceTree = "<group>"; };
+		CF25558B1C0B85700008C853 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RombergLab/Images.xcassets; sourceTree = "<group>"; };
+		CF41733C1C10F9EE00A27AB0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CF4173461C10FB9500A27AB0 /* SecondWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondWindowController.h; sourceTree = "<group>"; };
+		CF4173471C10FB9500A27AB0 /* SecondWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondWindowController.m; sourceTree = "<group>"; };
+		CF41734A1C10FD9800A27AB0 /* ThirdWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdWindowController.h; sourceTree = "<group>"; };
+		CF41734B1C10FD9800A27AB0 /* ThirdWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdWindowController.m; sourceTree = "<group>"; };
+		CF41734F1C10FDC300A27AB0 /* FourthWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthWindowController.h; sourceTree = "<group>"; };
+		CF4173501C10FDC300A27AB0 /* FourthWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthWindowController.m; sourceTree = "<group>"; };
+		CF4173521C10FE0100A27AB0 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		CF4173531C10FE0100A27AB0 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		CF4173551C10FE2900A27AB0 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		CF4173561C10FE2900A27AB0 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		CF665F501C0B83BB0093F569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF7E5DDC1C0F7ABA00214499 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Disconnect.m4a; path = Sonidos/Disconnect.m4a; sourceTree = "<group>"; };
+		CF92A5B41C14C91D000917DE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		CF92A5B51C14C91D000917DE /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF9A38181C134972007106F8 /* contacto.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = contacto.m4a; path = Sonidos/contacto.m4a; sourceTree = "<group>"; };
+		CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "core-plot-master/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
+		CFC285BE1C1116DA0017601E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CFFDE6CA1C0B822500E08C64 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CFFDE6CC1C0B822500E08C64 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CFFDE6CD1C0B822500E08C64 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAF34931C11381100F72F32 /* CorePlot.framework in Frameworks */,
+				CFC285BF1C1116DA0017601E /* QuartzCore.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC285BE1C1116DA0017601E /* QuartzCore.framework */,
+				825D9F09108BD2FD0009E075 /* IOBluetooth.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* RombergLab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* GoogleHealthWeight */ = {
+			isa = PBXGroup;
+			children = (
+				825D9EFE108BD2E40009E075 /* wiiRemoteFramework */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* RombergLab */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				CF0352481C0CC45700B448CD /* Sounds */,
+			);
+			name = GoogleHealthWeight;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* RombergLab_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* RombergLab */ = {
+			isa = PBXGroup;
+			children = (
+				CF22810C1C165B37008F4140 /* RombergLab.entitlements */,
+				CF7E5DDC1C0F7ABA00214499 /* Credits.html */,
+				CFFDE6CA1C0B822500E08C64 /* AppDelegate.h */,
+				CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */,
+				CFFDE6CC1C0B822500E08C64 /* ViewController.h */,
+				CFFDE6CD1C0B822500E08C64 /* ViewController.m */,
+				CF665F4F1C0B83900093F569 /* Main.storyboard */,
+				CF4173581C10FF5A00A27AB0 /* Windows */,
+				CF4173491C10FBBF00A27AB0 /* ViewControllers */,
+				CF25558B1C0B85700008C853 /* Images.xcassets */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = RombergLab;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		825D9EFE108BD2E40009E075 /* wiiRemoteFramework */ = {
+			isa = PBXGroup;
+			children = (
+				825D9EFF108BD2E40009E075 /* Mii.h */,
+				825D9F00108BD2E40009E075 /* WiiRemote.h */,
+				825D9F01108BD2E40009E075 /* WiiRemote.m */,
+				825D9F02108BD2E40009E075 /* WiiRemoteDiscovery.h */,
+				825D9F03108BD2E40009E075 /* WiiRemoteDiscovery.m */,
+				825D9F04108BD2E40009E075 /* WiiRemotePrivate.h */,
+			);
+			path = wiiRemoteFramework;
+			sourceTree = "<group>";
+		};
+		CF0352481C0CC45700B448CD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CF0352461C0CC44500B448CD /* Success.m4a */,
+				CF9A38181C134972007106F8 /* contacto.m4a */,
+				CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		CF4173491C10FBBF00A27AB0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF41733C1C10F9EE00A27AB0 /* SecondViewController.h */,
+				CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */,
+				CF4173521C10FE0100A27AB0 /* ThirdViewController.h */,
+				CF4173531C10FE0100A27AB0 /* ThirdViewController.m */,
+				CF4173551C10FE2900A27AB0 /* FourthViewController.h */,
+				CF4173561C10FE2900A27AB0 /* FourthViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CF4173581C10FF5A00A27AB0 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				CF4173461C10FB9500A27AB0 /* SecondWindowController.h */,
+				CF4173471C10FB9500A27AB0 /* SecondWindowController.m */,
+				CF41734A1C10FD9800A27AB0 /* ThirdWindowController.h */,
+				CF41734B1C10FD9800A27AB0 /* ThirdWindowController.m */,
+				CF41734F1C10FDC300A27AB0 /* FourthWindowController.h */,
+				CF4173501C10FDC300A27AB0 /* FourthWindowController.m */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
+		CFAF347B1C1137DD00F72F32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF34881C1137DD00F72F32 /* CorePlot.framework */,
+				CFAF348A1C1137DD00F72F32 /* UnitTests.xctest */,
+				CFAF348C1C1137DD00F72F32 /* CorePlot.framework */,
+				CFAF348E1C1137DD00F72F32 /* UnitTests iOS.xctest */,
+				CFAF34901C1137DD00F72F32 /* libCorePlot-CocoaTouch.a */,
+				CFAF34921C1137DD00F72F32 /* CorePlot-CocoaTouchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* RombergLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "RombergLab" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				CFAF34941C11382500F72F32 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RombergLab;
+			productInstallPath = "$(HOME)/Applications";
+			productName = GoogleHealthWeight;
+			productReference = 8D1107320486CEB800E47090 /* RombergLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = ARK;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = S5T2URH846;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RombergLab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* GoogleHealthWeight */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CFAF347B1C1137DD00F72F32 /* Products */;
+					ProjectRef = CFAF347A1C1137DD00F72F32 /* CorePlot.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* RombergLab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CFAF34881C1137DD00F72F32 /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = CFAF34871C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFAF348A1C1137DD00F72F32 /* UnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.xctest;
+			remoteRef = CFAF34891C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFAF348C1C1137DD00F72F32 /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = CFAF348B1C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFAF348E1C1137DD00F72F32 /* UnitTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UnitTests iOS.xctest";
+			remoteRef = CFAF348D1C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFAF34901C1137DD00F72F32 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = CFAF348F1C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFAF34921C1137DD00F72F32 /* CorePlot-CocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CorePlot-CocoaTouchTests.xctest";
+			remoteRef = CFAF34911C1137DD00F72F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0352471C0CC44500B448CD /* Success.m4a in Resources */,
+				CF7E5DDD1C0F7ABA00214499 /* Credits.html in Resources */,
+				CF9A38191C134972007106F8 /* contacto.m4a in Resources */,
+				CF25558C1C0B85700008C853 /* Images.xcassets in Resources */,
+				CF665F4D1C0B83900093F569 /* Main.storyboard in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				CF91D4B71C0E44AF00C0641A /* Disconnect.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF41733E1C10F9EE00A27AB0 /* SecondViewController.m in Sources */,
+				CF4173511C10FDC300A27AB0 /* FourthWindowController.m in Sources */,
+				CF41734D1C10FD9800A27AB0 /* ThirdWindowController.m in Sources */,
+				CF4173481C10FB9500A27AB0 /* SecondWindowController.m in Sources */,
+				CFFDE6CE1C0B822500E08C64 /* AppDelegate.m in Sources */,
+				CF4173571C10FE2900A27AB0 /* FourthViewController.m in Sources */,
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				CF4173541C10FE0100A27AB0 /* ThirdViewController.m in Sources */,
+				825D9F05108BD2E40009E075 /* WiiRemote.m in Sources */,
+				825D9F06108BD2E40009E075 /* WiiRemoteDiscovery.m in Sources */,
+				CFFDE6CF1C0B822500E08C64 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+				CF92A5B51C14C91D000917DE /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF665F4F1C0B83900093F569 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF665F501C0B83BB0093F569 /* Base */,
+				CF92A5B41C14C91D000917DE /* es */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_ENTITLEMENTS = RombergLab/RombergLab.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RombergLab_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = ARK.RombergLab;
+				PRODUCT_NAME = RombergLab;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_ENTITLEMENTS = RombergLab/RombergLab.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RombergLab_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = ARK.RombergLab;
+				PRODUCT_NAME = RombergLab;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "RombergLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RombergLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
