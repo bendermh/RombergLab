@@ -927,6 +927,7 @@ NSDate *Tiempo;
         //Inicia la grabacion
         enprueba = YES;
         grabarLibreON = YES;
+        [datoslibres removeAllObjects];
         NSTimer *grabarlibre;
         grabarlibre = [NSTimer scheduledTimerWithTimeInterval: 0.05
                                                target: self
