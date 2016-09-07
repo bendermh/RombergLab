@@ -123,7 +123,7 @@
 		8D1107320486CEB800E47090 /* RombergLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RombergLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0352461C0CC44500B448CD /* Success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Success.m4a; path = Sonidos/Success.m4a; sourceTree = "<group>"; };
 		CF097D171D3E7C1500155FCE /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "core-plot-release-2.2/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
-		CF25558B1C0B85700008C853 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RombergLab/Images.xcassets; sourceTree = "<group>"; };
+		CF25558B1C0B85700008C853 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF41733C1C10F9EE00A27AB0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CF4173461C10FB9500A27AB0 /* SecondWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondWindowController.h; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		CF4173551C10FE2900A27AB0 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		CF4173561C10FE2900A27AB0 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		CF665F501C0B83BB0093F569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF7115BE1D3EDC93004852B1 /* RombergLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RombergLab.entitlements; path = RombergLab/RombergLab.entitlements; sourceTree = "<group>"; };
+		CF7115BE1D3EDC93004852B1 /* RombergLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RombergLab.entitlements; sourceTree = "<group>"; };
 		CF7E5DDC1C0F7ABA00214499 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Disconnect.m4a; path = Sonidos/Disconnect.m4a; sourceTree = "<group>"; };
 		CF92A5B41C14C91D000917DE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -506,7 +506,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
-				CODE_SIGN_ENTITLEMENTS = RombergLab/RombergLab.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RombergLab.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -548,7 +548,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
-				CODE_SIGN_ENTITLEMENTS = RombergLab/RombergLab.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RombergLab.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
