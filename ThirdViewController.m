@@ -18,6 +18,7 @@
 @synthesize datosGrafico2;
 @synthesize datosGrafico3;
 @synthesize datosGrafico4;
+@synthesize areafoto;
 
 
 - (void)viewDidLoad {
@@ -1163,4 +1164,22 @@
 
 
 
+- (IBAction)guardarfoto:(id)sender {
+    //De elemnto a imagen
+    NSSize imgSize = areafoto.bounds.size;
+    NSBitmapImageRep * rep = [areafoto bitmapImageRepForCachingDisplayInRect:[areafoto bounds]];
+    [rep setSize:imgSize];
+    [areafoto cacheDisplayInRect:[areafoto bounds] toBitmapImageRep:rep];
+    NSData* data = [rep representationUsingType:NSPNGFileType properties:@{}];
+    //Guardar imagen
+    NSSavePanel * savePanel = [NSSavePanel savePanel];
+    [savePanel setAllowedFileTypes:@[@"png"]];
+    [savePanel setDirectoryURL:[NSURL fileURLWithPath:NSHomeDirectory()]];
+    [savePanel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger result){
+        if (result == NSFileHandlingPanelOKButton) {
+            [savePanel orderOut:self]; //Cerrar el panel
+            [data writeToURL:savePanel.URL atomically:YES];
+        }
+    }];
+}
 @end

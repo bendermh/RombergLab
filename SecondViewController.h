@@ -13,8 +13,10 @@
 
 @property (weak) IBOutlet NSView *AreaGrafico;
 @property (weak) IBOutlet NSTextField *area;
+@property (weak) IBOutlet NSView *areafoto;
 
 @property NSMutableArray *datos;
 @property NSMutableArray *datosGrafico1;
+- (IBAction)guardarPNG:(id)sender;
 
 @end

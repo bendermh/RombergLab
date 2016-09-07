@@ -446,5 +446,9 @@
 "9Q5-18-Yj7.title" = "Derecha";
 /* Class = "NSTextFieldCell"; title = "Leyenda LOS - Posterior (Posterior)"; ObjectID = "iZu-aE-kvY"; */
 "iZu-aE-kvY.title" = "Posterior";
+/* Class = "NSButtonCell"; title = "Start Recording"; ObjectID = "ZRs-E1-9ea"; */
+"i9N-BK-7jn.title" = "Guardar PNG";
+/* Class = "NSButtonCell"; title = "Start Recording"; ObjectID = "ZRs-E1-9ea"; */
+"69H-Cg-kZG.title" = "Guardar PNG";
 
 
