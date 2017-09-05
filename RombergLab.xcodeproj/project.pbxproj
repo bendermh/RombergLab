@@ -27,6 +27,8 @@
 		CF91D4B71C0E44AF00C0641A /* Disconnect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */; };
 		CF9A38191C134972007106F8 /* contacto.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF9A38181C134972007106F8 /* contacto.m4a */; };
 		CFC285BF1C1116DA0017601E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC285BE1C1116DA0017601E /* QuartzCore.framework */; };
+		CFCE00C31F5D414D00195E89 /* FivethWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCE00C21F5D414D00195E89 /* FivethWindowController.m */; };
+		CFCE00D41F5D417700195E89 /* FivethViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCE00D21F5D417700195E89 /* FivethViewController.m */; };
 		CFFDE6CE1C0B822500E08C64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */; };
 		CFFDE6CF1C0B822500E08C64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFDE6CD1C0B822500E08C64 /* ViewController.m */; };
 /* End PBXBuildFile section */
@@ -143,6 +145,10 @@
 		CF92A5B51C14C91D000917DE /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF9A38181C134972007106F8 /* contacto.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = contacto.m4a; path = Sonidos/contacto.m4a; sourceTree = "<group>"; };
 		CFC285BE1C1116DA0017601E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CFCE00C11F5D414D00195E89 /* FivethWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FivethWindowController.h; sourceTree = "<group>"; };
+		CFCE00C21F5D414D00195E89 /* FivethWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FivethWindowController.m; sourceTree = "<group>"; };
+		CFCE00D11F5D417700195E89 /* FivethViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FivethViewController.h; sourceTree = "<group>"; };
+		CFCE00D21F5D417700195E89 /* FivethViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FivethViewController.m; sourceTree = "<group>"; };
 		CFFDE6CA1C0B822500E08C64 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CFFDE6CC1C0B822500E08C64 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 		CF4173491C10FBBF00A27AB0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFCE00D11F5D417700195E89 /* FivethViewController.h */,
+				CFCE00D21F5D417700195E89 /* FivethViewController.m */,
 				CF41733C1C10F9EE00A27AB0 /* SecondViewController.h */,
 				CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */,
 				CF4173521C10FE0100A27AB0 /* ThirdViewController.h */,
@@ -296,6 +304,8 @@
 		CF4173581C10FF5A00A27AB0 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
+				CFCE00C11F5D414D00195E89 /* FivethWindowController.h */,
+				CFCE00C21F5D414D00195E89 /* FivethWindowController.m */,
 				CF4173461C10FB9500A27AB0 /* SecondWindowController.h */,
 				CF4173471C10FB9500A27AB0 /* SecondWindowController.m */,
 				CF41734A1C10FD9800A27AB0 /* ThirdWindowController.h */,
@@ -334,7 +344,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = ARK;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -463,6 +473,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				CF4173541C10FE0100A27AB0 /* ThirdViewController.m in Sources */,
 				825D9F05108BD2E40009E075 /* WiiRemote.m in Sources */,
+				CFCE00D41F5D417700195E89 /* FivethViewController.m in Sources */,
+				CFCE00C31F5D414D00195E89 /* FivethWindowController.m in Sources */,
 				825D9F06108BD2E40009E075 /* WiiRemoteDiscovery.m in Sources */,
 				CFFDE6CF1C0B822500E08C64 /* ViewController.m in Sources */,
 			);
@@ -582,12 +594,18 @@
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -614,12 +632,18 @@
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

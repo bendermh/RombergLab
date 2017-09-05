@@ -929,7 +929,7 @@ NSDate *Tiempo;
         grabarLibreON = YES;
         [datoslibres removeAllObjects];
         NSTimer *grabarlibre;
-        grabarlibre = [NSTimer scheduledTimerWithTimeInterval: 0.05
+        grabarlibre = [NSTimer scheduledTimerWithTimeInterval: 0.025
                                                target: self
                                             selector: @selector(grabandoLibre:)
                                              userInfo: nil

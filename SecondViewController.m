@@ -15,6 +15,10 @@
 @implementation SecondViewController
 @synthesize datos;
 @synthesize datosGrafico1;
+@synthesize datosTime;
+@synthesize datosForce;
+@synthesize datosX;
+@synthesize datosY;
 @synthesize areafoto;
 
 - (void)viewDidLoad {
@@ -266,6 +270,10 @@
     //Metodo para cargar los datos en esta clase
     datos = (NSMutableArray *)notificacion.object;
     datosGrafico1 = [NSMutableArray array];
+    datosTime  = [NSMutableArray array];
+    datosForce = [NSMutableArray array];
+    datosX  = [NSMutableArray array];
+    datosY = [NSMutableArray array];
     
     NSMutableArray *DatosX = [NSMutableArray array];
     NSMutableArray *DatosY = [NSMutableArray array];
@@ -273,6 +281,11 @@
     for (int i = 0;i < [datos count];i++){
         [DatosX addObject:datos[i][3]];
         [DatosY addObject:datos[i][4]];
+        [datosTime  addObject:datos[i][1]];
+        [datosForce addObject:datos[i][2]];
+        [datosX addObject:datos[i][3]];
+        [datosY addObject:datos[i][4]];
+        
     }
     
     for (int i = 0;i < [datos count];i++){
@@ -326,6 +339,47 @@
     }
     //Añadir mas graficos
     return [NSNumber numberWithFloat:0];
+}
+- (IBAction)guardarCSV:(id)sender {
+    
+    //CSV formating
+    // Structure in Data [Program Mode, Time Stamp, Calibrated Total Weight, Center of Gravity x, Center of Gravity y]
+    NSMutableString *csvString = [NSMutableString stringWithString:@"Time,Force,PositionX,PositionY\n"];
+    
+    float valorTime  = 0.0;
+    float valorForce = 0.0;
+    float valorX  = 0.0;
+    float valorY = 0.0;
+    
+    for (int i = 0;i < [datosForce count];i++){
+        valorTime  = [[datosTime  objectAtIndex:i] doubleValue];
+        valorForce = [[datosForce objectAtIndex:i] doubleValue];
+        valorX  = [[datosX  objectAtIndex:i] doubleValue];
+        valorY = [[datosY objectAtIndex:i] doubleValue];
+        [csvString appendFormat:@"%0.3f, %0.2f, %0.2f, %0.2f\n", valorTime, valorForce, valorX, valorY];
+    }
+    //GUI SAVING
+    
+    // create the save panel
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    
+    // set panel parameters
+    [panel setNameFieldStringValue:@"freeModeData.csv"];
+    [panel setTitle:@"Export data to CSV file"];
+    
+    // display the panel
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        
+        if (result == NSFileHandlingPanelOKButton) {
+            
+            // create a file namaner and grab the save panel's returned URL
+            NSFileManager *manager = [NSFileManager defaultManager];
+            NSURL *saveURL = [panel URL];
+            
+            [manager createFileAtPath:saveURL.relativePath contents:[csvString dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+        }
+    }];
+    
 }
 
 - (IBAction)guardarPNG:(id)sender {

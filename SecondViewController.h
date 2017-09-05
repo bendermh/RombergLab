@@ -17,6 +17,11 @@
 
 @property NSMutableArray *datos;
 @property NSMutableArray *datosGrafico1;
+@property NSMutableArray *datosTime;
+@property NSMutableArray *datosForce;
+@property NSMutableArray *datosX;
+@property NSMutableArray *datosY;
+
 - (IBAction)guardarPNG:(id)sender;
 
 @end

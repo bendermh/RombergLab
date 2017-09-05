@@ -19,6 +19,7 @@
 @synthesize datosGrafico3;
 @synthesize datosGrafico4;
 @synthesize areafoto;
+@synthesize myWindowController4;
 
 
 - (void)viewDidLoad {
@@ -1163,6 +1164,16 @@
 }
 
 
+- (IBAction)verInforme:(id)sender {
+    
+    NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil]; // get a reference to the storyboard
+    myWindowController4 = [storyBoard instantiateControllerWithIdentifier:@"QuintaVentana"]; // instantiate your window controller
+    [myWindowController4 showWindow:self];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"InformePosturografia"
+     object:datos];
+}
 
 - (IBAction)guardarfoto:(id)sender {
     //De elemnto a imagen

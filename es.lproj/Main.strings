@@ -436,19 +436,70 @@
 
 /* Class = "NSTextFieldCell"; title = "Plot LOS"; ObjectID = ""; */
 "b6m-ut-vdW.title" = "Gráfico de límites de estabilidad";
+
 /* Class = "NSTextFieldCell"; title = "Datos LOS"; ObjectID = ""; */
 "r7h-SO-SPn.title" = "Datos LOS";
+
 /* Class = "NSTextFieldCell"; title = "Leyenda LOS"; ObjectID = ""; */
 "aMb-xp-aXf.title" = "Anterior";
+
 /* Class = "NSTextFieldCell"; title = "Leyenda LOS"; ObjectID = ""; */
 "Foi-DR-ocZ.title" = "Izquierda";
+
 /* Class = "NSTextFieldCell"; title = "Leyenda LOS"; ObjectID = ""; */
 "9Q5-18-Yj7.title" = "Derecha";
+
 /* Class = "NSTextFieldCell"; title = "Leyenda LOS - Posterior (Posterior)"; ObjectID = "iZu-aE-kvY"; */
 "iZu-aE-kvY.title" = "Posterior";
+
 /* Class = "NSButtonCell"; title = "Start Recording"; ObjectID = "ZRs-E1-9ea"; */
-"i9N-BK-7jn.title" = "Guardar PNG";
+"JVi-N1-Qig.title" = "Guardar PNG";
+
 /* Class = "NSButtonCell"; title = "Start Recording"; ObjectID = "ZRs-E1-9ea"; */
-"69H-Cg-kZG.title" = "Guardar PNG";
+"9hO-Sy-cOS.title" = "Guardar PNG";
+
+/* Class = "NSButtonCell"; title = "Start Recording"; ObjectID = "ZRs-E1-9ea"; */
+"Vz6-GU-WgP.title" = "Exportar a CSV";
+
+"auF-iH-1sC.title" = "Informe...";
+
+"wxX-v3-AqI.title" = "Calcular";
+
+"dL6-9D-tKT.title" = "Guardar PNG";
+
+"Ffj-HW-cne.title" = "Caida en 1";
+
+"F3Q-wf-bQK.title" = "Caida en 2";
+
+"ucA-NO-z5l.title" = "Caida en 3";
+
+"Wk6-tN-1Tj.title" = "Caida en 4";
+
+/* Class = "NSTextFieldCell"; title = "Leyenda LOS - Posterior (Posterior)"; ObjectID = "iZu-aE-kvY"; */
+"u0K-OA-GFY.title" = "INFORME DE EVALUACIÓN DEL EQUILIBRIO";
+
+"t4S-Wo-zMP.title" = "NO VALIDO PARA USO MÉDICO";
+
+"vvf-EN-p7k.title" = "Nombre:";
+
+"NGO-G8-aqc.title" = "Altura(cm)*:";
+
+"9tQ-tM-EtK.title" = "Nacimiento*:";
+
+"jW3-M7-wwR.title" = "PUNTUACIONES";
+
+"y9g-g7-bvF.title" = "Contribuciones";
+
+"sCR-gh-giR.title" = "Otros";
+
+"HNz-b5-ar9.title" = "Consistencia:";
+
+"sJg-tA-W02.title" = "Somático:";
+
+
+
+
+
+
 
 
