@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
@@ -920,7 +920,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="fFj-rM-3Fe">
                                         <rect key="frame" x="119" y="304" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="PsK-pK-bAy"/>
+                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" levelIndicatorStyle="continuousCapacity" id="PsK-pK-bAy"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="Sln-sj-cVc">
                                         <rect key="frame" x="18" y="198" width="95" height="17"/>
@@ -934,7 +934,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="lq5-HC-0Jo">
                                         <rect key="frame" x="119" y="198" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="hPC-dU-x2o"/>
+                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hPC-dU-x2o"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="OW1-kI-Hpr">
                                         <rect key="frame" x="18" y="173" width="95" height="17"/>
@@ -948,7 +948,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="2TH-bV-d1J">
                                         <rect key="frame" x="119" y="173" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="qjd-Yu-7JP"/>
+                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="qjd-Yu-7JP"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="xvx-CM-Rci">
                                         <rect key="frame" x="18" y="148" width="95" height="17"/>
@@ -962,7 +962,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="ebn-h7-ADz">
                                         <rect key="frame" x="119" y="148" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="Dd2-jk-N7r"/>
+                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="Dd2-jk-N7r"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="RGc-if-43c">
                                         <rect key="frame" x="18" y="40" width="95" height="17"/>
@@ -976,10 +976,10 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="lgt-xk-CeL">
                                         <rect key="frame" x="119" y="40" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="hZo-yY-yA9"/>
+                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hZo-yY-yA9"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="YqP-xD-ge1">
-                                        <rect key="frame" x="117" y="279" width="54" height="17"/>
+                                        <rect key="frame" x="117" y="279" width="167" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0000" id="5wz-BM-dt1">
                                             <font key="font" metaFont="system" size="16"/>
@@ -1003,6 +1003,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Background" id="HFI-QK-k82"/>
                                     </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="oQp-3K-m4J">
+                                        <rect key="frame" x="13" y="0.0" width="714" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="GTL-td-QBR">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                             </customView>
                             <button verticalHuggingPriority="750" misplaced="YES" id="DlD-MC-TJo">
@@ -1025,6 +1034,7 @@
                         <outlet property="barSomatic" destination="ebn-h7-ADz" id="SoI-86-eIl"/>
                         <outlet property="barVestibular" destination="lq5-HC-0Jo" id="fdz-py-ddc"/>
                         <outlet property="barVisual" destination="2TH-bV-d1J" id="OZx-8f-W3c"/>
+                        <outlet property="betaInfo" destination="oQp-3K-m4J" id="ZnW-c4-3UO"/>
                         <outlet property="buttonCondition1" destination="O7D-r6-Vva" id="CaF-Iq-fRl"/>
                         <outlet property="buttonCondition2" destination="OXk-dv-hRa" id="VEW-CI-GJk"/>
                         <outlet property="buttonCondition3" destination="GgH-HY-TXS" id="Y3M-aD-gmm"/>
@@ -1032,6 +1042,7 @@
                         <outlet property="fieldBirthday" destination="3UM-8j-Wnw" id="9gQ-Ir-H31"/>
                         <outlet property="fieldHeight" destination="rbQ-FT-GNX" id="ETY-63-nVT"/>
                         <outlet property="formatterDate" destination="6j6-BV-MuN" id="tjm-HX-4dY"/>
+                        <outlet property="globalScoreValue" destination="YqP-xD-ge1" id="Frg-Ql-2Rf"/>
                         <outlet property="labelDate" destination="J76-rE-R80" id="4ln-OH-pP7"/>
                     </connections>
                 </viewController>

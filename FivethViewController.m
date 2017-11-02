@@ -23,6 +23,8 @@
 @property (weak) IBOutlet NSLevelIndicator *barSomatic;
 @property (weak) IBOutlet NSLevelIndicator *barConsistency;
 @property (weak) IBOutlet NSView *areaReport;
+@property (weak) IBOutlet NSTextField *globalScoreValue;
+@property (weak) IBOutlet NSTextField *betaInfo;
 
 @end
 
@@ -44,6 +46,11 @@
                                                  name:@"InformePosturografia"
                                                object:nil];
     
+    if (@available(macOS 10.13, *)) {[self.barGlobal setFillColor:[NSColor greenColor]];}
+    if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor greenColor]];}
+    if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
+    if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
+    if (@available(macOS 10.13, *)) {[self.barConsistency setFillColor:[NSColor greenColor]];}
 //Date set
     NSDate *today = [NSDate date];
     self.labelDate.stringValue = [self.formatterDate stringFromDate:today];
@@ -108,8 +115,6 @@
 
 //metod to compute scores
 -(void)creaInforme{
-    // ACORDARSE DE LAS CAIDAS
-    
     //get age and height
     int height = [self.fieldHeight.stringValue intValue];
     NSDate *today = [NSDate date];
@@ -140,10 +145,42 @@
     float limVest = [TestNormals[1] floatValue];
     float limVis = [TestNormals[2] floatValue];
     float limSomat = [TestNormals[3] floatValue];
-    //Check falls
-    //****NOT implemented
-    NSLog(@"Global: %f over %f Vestibular:%f over %f Visual:%f over %f Somat:%f over %f",scGlob,limGlob,scVest,limVest,scVis,limVis,scSomat,limSomat);
-    NSLog(@"Inconsistent: %f",scInt);
+//  Put results in view
+    int sc = round(scGlob*100);
+    self.globalScoreValue.stringValue = [NSString stringWithFormat:@"%i/100",sc];
+    self.barGlobal.floatValue = scGlob;
+    self.barConsistency.floatValue = scInt;
+    if (scGlob-limGlob < 0){
+        [self.barVestibular setHidden:TRUE];
+        [self.barVisual setHidden:TRUE];
+        [self.barSomatic setHidden:TRUE];
+        if (@available(macOS 10.13, *)) {[self.barGlobal setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
+    }
+    else {
+        [self.barVestibular setHidden:FALSE];
+        [self.barVisual setHidden:FALSE];
+        [self.barSomatic setHidden:FALSE];
+        if (@available(macOS 10.13, *)) {[self.barGlobal setFillColor:[NSColor redColor]];}
+        if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
+        self.barVestibular.floatValue = scVest;
+        self.barVisual.floatValue = scVis;
+        self.barSomatic.floatValue = scSomat;
+        if(scVest-limVest < 0){
+            if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor redColor]];}
+        }
+        if(scVis-limVis < 0) {
+            if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor redColor]];}
+        }
+        if(scSomat-limSomat < 0){
+            if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor redColor]];}
+        }
+    }
+    self.betaInfo.stringValue = [NSString stringWithFormat:@"Global: %f over %f Vestibular:%f over %f Visual:%f over %f Somat:%f over %f Inconsistent: %f",scGlob,limGlob,scVest,limVest,scVis,limVis,scSomat,limSomat,scInt];
 }
 //Scores calculation method
 -(NSArray *)getScores:(float)area1 :(float)area2 :(float)area3 :(float)area4{
@@ -152,6 +189,11 @@
     float scoreDos = ((40.03-(area2-3.74))/(40.03));
     float scoreTres = ((179.33-(area3-19.18))/(179.33));
     float scoreCuatro = ((743.22-(area4-39.11))/(743.22));
+    //Falls Counting
+    if (_buttonCondition1.state == TRUE) {scoreUno = 0;}
+    if (_buttonCondition2.state == TRUE) {scoreDos = 0;}
+    if (_buttonCondition3.state == TRUE) {scoreTres = 0;}
+    if (_buttonCondition4.state == TRUE) {scoreCuatro = 0;}
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
     //Pre systems scores
@@ -219,17 +261,19 @@
     int heightPos = heightGroup-1;
     //Limit Calculation
     //Matrix definition from statistical clinical trial
+    //Modifications: If mean <0.5 is corrected to = 0.5
+    //Modifications: If SD > 0.2 is corrected to 0.2
     float globalMeanMatrix[4][4];
     globalMeanMatrix[0][0] = 0.503f;
-    globalMeanMatrix[0][1] = 0.370f;
+    globalMeanMatrix[0][1] = 0.500f;
     globalMeanMatrix[0][2] = 0.616f;
     globalMeanMatrix[0][3] = 0.789f;
     globalMeanMatrix[1][0] = 0.691f;
     globalMeanMatrix[1][1] = 0.712f;
     globalMeanMatrix[1][2] = 0.732f;
     globalMeanMatrix[1][3] = 0.808f;
-    globalMeanMatrix[2][0] = 0.495f;
-    globalMeanMatrix[2][1] = 0.335f;
+    globalMeanMatrix[2][0] = 0.500f;
+    globalMeanMatrix[2][1] = 0.500f;
     globalMeanMatrix[2][2] = 0.592f;
     globalMeanMatrix[2][3] = 0.678f;
     globalMeanMatrix[3][0] = 0.703f;
@@ -237,16 +281,16 @@
     globalMeanMatrix[3][2] = 0.801f;
     globalMeanMatrix[3][3] = 0.830f;
     float globalSdMatrix[4][4];
-    globalSdMatrix[0][0] = 0.214f;
-    globalSdMatrix[0][1] = 0.282f;
-    globalSdMatrix[0][2] = 0.283f;
+    globalSdMatrix[0][0] = 0.200f;
+    globalSdMatrix[0][1] = 0.200f;
+    globalSdMatrix[0][2] = 0.200f;
     globalSdMatrix[0][3] = 0.134f;
     globalSdMatrix[1][0] = 0.165f;
     globalSdMatrix[1][1] = 0.096f;
-    globalSdMatrix[1][2] = 0.215f;
+    globalSdMatrix[1][2] = 0.200f;
     globalSdMatrix[1][3] = 0.164f;
-    globalSdMatrix[2][0] = 0.265f;
-    globalSdMatrix[2][1] = 0.219f;
+    globalSdMatrix[2][0] = 0.200f;
+    globalSdMatrix[2][1] = 0.200f;
     globalSdMatrix[2][2] = 0.220f;
     globalSdMatrix[2][3] = 0.176f;
     globalSdMatrix[3][0] = 0.138f;
@@ -322,7 +366,7 @@
     visualMeanMatrix[2][2] = 0.615f;
     visualMeanMatrix[2][3] = 0.756f;
     visualMeanMatrix[3][0] = 0.811f;
-    visualMeanMatrix[3][1] = 0.463f;
+    visualMeanMatrix[3][1] = 0.500f;
     visualMeanMatrix[3][2] = 0.785f;
     visualMeanMatrix[3][3] = 0.874f;
     float visualSdMatrix[4][4];
@@ -359,11 +403,11 @@
     somatosensorialMeanMatrix[0][2] = 0.778f;
     somatosensorialMeanMatrix[0][3] = 0.786f;
     somatosensorialMeanMatrix[1][0] = 0.777f;
-    somatosensorialMeanMatrix[1][1] = 0.428f;
+    somatosensorialMeanMatrix[1][1] = 0.500f;
     somatosensorialMeanMatrix[1][2] = 0.868f;
     somatosensorialMeanMatrix[1][3] = 0.906f;
     somatosensorialMeanMatrix[2][0] = 0.868f;
-    somatosensorialMeanMatrix[2][1] = 0.490f;
+    somatosensorialMeanMatrix[2][1] = 0.500f;
     somatosensorialMeanMatrix[2][2] = 0.535f;
     somatosensorialMeanMatrix[2][3] = 0.742f;
     somatosensorialMeanMatrix[3][0] = 0.918f;
