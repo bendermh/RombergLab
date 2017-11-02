@@ -121,7 +121,7 @@
     NSDate *birth = self.fieldBirthday.dateValue;
     NSTimeInterval rawAge = [today timeIntervalSinceDate:birth];
     int age = (rawAge/(365*24*60*60));
-    NSLog(@"Under construction age: %i height:%i",height,age);
+    NSLog(@"Under construction age: %i height:%i",age,height);
     float areaUno = A1;
     float areaDos = A2;
     float areaTres = A3;
@@ -147,10 +147,16 @@
     float limSomat = [TestNormals[3] floatValue];
 //  Put results in view
     int sc = round(scGlob*100);
+//    Check for NaN values
+    if (limGlob != limGlob){limGlob = 0;}
+    if (limVest != limVest){limVest = 0;}
+    if (limVis != limVis){limVis = 0;}
+    if (limSomat != limSomat){limSomat = 0;}
+//    output results
     self.globalScoreValue.stringValue = [NSString stringWithFormat:@"%i/100",sc];
     self.barGlobal.floatValue = scGlob;
     self.barConsistency.floatValue = scInt;
-    if (scGlob-limGlob < 0){
+    if (scGlob-limGlob > 0){
         [self.barVestibular setHidden:TRUE];
         [self.barVisual setHidden:TRUE];
         [self.barSomatic setHidden:TRUE];
@@ -180,7 +186,7 @@
             if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor redColor]];}
         }
     }
-    self.betaInfo.stringValue = [NSString stringWithFormat:@"Global: %f over %f Vestibular:%f over %f Visual:%f over %f Somat:%f over %f Inconsistent: %f",scGlob,limGlob,scVest,limVest,scVis,limVis,scSomat,limSomat,scInt];
+    self.betaInfo.stringValue = [NSString stringWithFormat:@"Global: %f/%f Vestibular:%f/%f Visual:%f/%f Somat:%f/%f",scGlob,limGlob,scVest,limVest,scVis,limVis,scSomat,limSomat];
 }
 //Scores calculation method
 -(NSArray *)getScores:(float)area1 :(float)area2 :(float)area3 :(float)area4{

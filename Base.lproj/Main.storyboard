@@ -920,7 +920,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="fFj-rM-3Fe">
                                         <rect key="frame" x="119" y="304" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" levelIndicatorStyle="continuousCapacity" id="PsK-pK-bAy"/>
+                                        <levelIndicatorCell key="cell" alignment="left" maxValue="1" levelIndicatorStyle="continuousCapacity" id="PsK-pK-bAy"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="Sln-sj-cVc">
                                         <rect key="frame" x="18" y="198" width="95" height="17"/>
@@ -934,7 +934,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="lq5-HC-0Jo">
                                         <rect key="frame" x="119" y="198" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hPC-dU-x2o"/>
+                                        <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hPC-dU-x2o"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="OW1-kI-Hpr">
                                         <rect key="frame" x="18" y="173" width="95" height="17"/>
@@ -948,7 +948,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="2TH-bV-d1J">
                                         <rect key="frame" x="119" y="173" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="qjd-Yu-7JP"/>
+                                        <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="qjd-Yu-7JP"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="xvx-CM-Rci">
                                         <rect key="frame" x="18" y="148" width="95" height="17"/>
@@ -962,7 +962,7 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="ebn-h7-ADz">
                                         <rect key="frame" x="119" y="148" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="Dd2-jk-N7r"/>
+                                        <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="Dd2-jk-N7r"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="RGc-if-43c">
                                         <rect key="frame" x="18" y="40" width="95" height="17"/>
@@ -976,12 +976,12 @@
                                     <levelIndicator verticalHuggingPriority="750" misplaced="YES" id="lgt-xk-CeL">
                                         <rect key="frame" x="119" y="40" width="345" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <levelIndicatorCell key="cell" alignment="left" doubleValue="1" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hZo-yY-yA9"/>
+                                        <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="1" criticalValue="1" levelIndicatorStyle="continuousCapacity" id="hZo-yY-yA9"/>
                                     </levelIndicator>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="YqP-xD-ge1">
-                                        <rect key="frame" x="117" y="279" width="167" height="17"/>
+                                        <rect key="frame" x="117" y="279" width="167" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0000" id="5wz-BM-dt1">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="5wz-BM-dt1">
                                             <font key="font" metaFont="system" size="16"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1004,10 +1004,10 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Background" id="HFI-QK-k82"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="oQp-3K-m4J">
-                                        <rect key="frame" x="13" y="0.0" width="714" height="32"/>
+                                        <rect key="frame" x="13" y="2" width="714" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="GTL-td-QBR">
-                                            <font key="font" metaFont="system" size="11"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="GTL-td-QBR">
+                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
