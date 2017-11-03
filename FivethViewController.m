@@ -304,7 +304,7 @@
     globalSdMatrix[3][2] = 0.153f;
     globalSdMatrix[3][3] = 0.154f;
     //Limit Calculation
-    limite = (globalMeanMatrix[agePos][heightPos]-2*(globalSdMatrix[agePos][heightPos]));
+    limite = (globalMeanMatrix[agePos][heightPos]-(globalSdMatrix[agePos][heightPos]));
     return limite;
 }
 -(float)limiteVestibular:(int)ageGroup :(int)heightGroup{
@@ -331,23 +331,22 @@
     vestibularMeanMatrix[3][2] = 1.064f;
     vestibularMeanMatrix[3][3] = 1.074f;
     float vestibularSdMatrix[4][4];
-    //Adjusted if < 0.05 then  = 0.05
-    vestibularSdMatrix[0][0] = 0.050f;
-    vestibularSdMatrix[0][1] = 0.050f;
-    vestibularSdMatrix[0][2] = 0.067f;
-    vestibularSdMatrix[0][3] = 0.050f;
-    vestibularSdMatrix[1][0] = 0.050f;
-    vestibularSdMatrix[1][1] = 0.050f;
-    vestibularSdMatrix[1][2] = 0.050f;
-    vestibularSdMatrix[1][3] = 0.050f;
-    vestibularSdMatrix[2][0] = 0.050f;
-    vestibularSdMatrix[2][1] = 0.063f;
-    vestibularSdMatrix[2][2] = 0.066f;
-    vestibularSdMatrix[2][3] = 0.058f;
-    vestibularSdMatrix[3][0] = 0.050f;
-    vestibularSdMatrix[3][1] = 0.074f;
-    vestibularSdMatrix[3][2] = 0.050f;
-    vestibularSdMatrix[3][3] = 0.050f;
+    vestibularSdMatrix[0][0] = 0.100f;
+    vestibularSdMatrix[0][1] = 0.100f;
+    vestibularSdMatrix[0][2] = 0.100f;
+    vestibularSdMatrix[0][3] = 0.100f;
+    vestibularSdMatrix[1][0] = 0.100f;
+    vestibularSdMatrix[1][1] = 0.100f;
+    vestibularSdMatrix[1][2] = 0.100f;
+    vestibularSdMatrix[1][3] = 0.100f;
+    vestibularSdMatrix[2][0] = 0.100f;
+    vestibularSdMatrix[2][1] = 0.100f;
+    vestibularSdMatrix[2][2] = 0.100f;
+    vestibularSdMatrix[2][3] = 0.100f;
+    vestibularSdMatrix[3][0] = 0.100f;
+    vestibularSdMatrix[3][1] = 0.100f;
+    vestibularSdMatrix[3][2] = 0.100f;
+    vestibularSdMatrix[3][3] = 0.100f;
     //Limit Calculation
     limite = (vestibularMeanMatrix[agePos][heightPos]-2*(vestibularSdMatrix[agePos][heightPos]));
     return limite;
@@ -360,7 +359,7 @@
     //Matrix definition from statistical clinical trial
     float visualMeanMatrix[4][4];
     visualMeanMatrix[0][0] = 0.796f;
-    visualMeanMatrix[0][1] = 0.990f;
+    visualMeanMatrix[0][1] = 0.800f;
     visualMeanMatrix[0][2] = 0.778f;
     visualMeanMatrix[0][3] = 0.700f;
     visualMeanMatrix[1][0] = 0.756f;
@@ -372,27 +371,27 @@
     visualMeanMatrix[2][2] = 0.615f;
     visualMeanMatrix[2][3] = 0.756f;
     visualMeanMatrix[3][0] = 0.811f;
-    visualMeanMatrix[3][1] = 0.500f;
+    visualMeanMatrix[3][1] = 0.700f;
     visualMeanMatrix[3][2] = 0.785f;
     visualMeanMatrix[3][3] = 0.874f;
     float visualSdMatrix[4][4];
     //adjusted id > 0.2 = 0.2
-    visualSdMatrix[0][0] = 0.200f;
-    visualSdMatrix[0][1] = 0.155f;
-    visualSdMatrix[0][2] = 0.200f;
-    visualSdMatrix[0][3] = 0.200f;
-    visualSdMatrix[1][0] = 0.200f;
-    visualSdMatrix[1][1] = 0.200f;
-    visualSdMatrix[1][2] = 0.200f;
-    visualSdMatrix[1][3] = 0.200f;
-    visualSdMatrix[2][0] = 0.200f;
-    visualSdMatrix[2][1] = 0.200f;
-    visualSdMatrix[2][2] = 0.200f;
-    visualSdMatrix[2][3] = 0.200f;
-    visualSdMatrix[3][0] = 0.200f;
-    visualSdMatrix[3][1] = 0.200f;
-    visualSdMatrix[3][2] = 0.200f;
-    visualSdMatrix[3][3] = 0.200f;
+    visualSdMatrix[0][0] = 0.150f;
+    visualSdMatrix[0][1] = 0.150f;
+    visualSdMatrix[0][2] = 0.150f;
+    visualSdMatrix[0][3] = 0.150f;
+    visualSdMatrix[1][0] = 0.150f;
+    visualSdMatrix[1][1] = 0.150f;
+    visualSdMatrix[1][2] = 0.150f;
+    visualSdMatrix[1][3] = 0.150f;
+    visualSdMatrix[2][0] = 0.150f;
+    visualSdMatrix[2][1] = 0.150f;
+    visualSdMatrix[2][2] = 0.150f;
+    visualSdMatrix[2][3] = 0.150f;
+    visualSdMatrix[3][0] = 0.150f;
+    visualSdMatrix[3][1] = 0.150f;
+    visualSdMatrix[3][2] = 0.150f;
+    visualSdMatrix[3][3] = 0.150f;
     //Limit Calculation
     limite = (visualMeanMatrix[agePos][heightPos]-2*(visualSdMatrix[agePos][heightPos]));
     return limite;
@@ -404,40 +403,40 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float somatosensorialMeanMatrix[4][4];
-    somatosensorialMeanMatrix[0][0] = 0.668f;
-    somatosensorialMeanMatrix[0][1] = 1.045f;
-    somatosensorialMeanMatrix[0][2] = 0.778f;
-    somatosensorialMeanMatrix[0][3] = 0.786f;
-    somatosensorialMeanMatrix[1][0] = 0.777f;
-    somatosensorialMeanMatrix[1][1] = 0.500f;
-    somatosensorialMeanMatrix[1][2] = 0.868f;
-    somatosensorialMeanMatrix[1][3] = 0.906f;
-    somatosensorialMeanMatrix[2][0] = 0.868f;
-    somatosensorialMeanMatrix[2][1] = 0.500f;
-    somatosensorialMeanMatrix[2][2] = 0.535f;
-    somatosensorialMeanMatrix[2][3] = 0.742f;
-    somatosensorialMeanMatrix[3][0] = 0.918f;
-    somatosensorialMeanMatrix[3][1] = 0.670f;
-    somatosensorialMeanMatrix[3][2] = 0.852f;
-    somatosensorialMeanMatrix[3][3] = 0.938f;
+    somatosensorialMeanMatrix[0][0] = 0.838f;
+    somatosensorialMeanMatrix[0][1] = 0.683f;
+    somatosensorialMeanMatrix[0][2] = 0.793f;
+    somatosensorialMeanMatrix[0][3] = 0.806f;
+    somatosensorialMeanMatrix[1][0] = 0.838f;
+    somatosensorialMeanMatrix[1][1] = 0.683f;
+    somatosensorialMeanMatrix[1][2] = 0.793f;
+    somatosensorialMeanMatrix[1][3] = 0.806f;
+    somatosensorialMeanMatrix[2][0] = 0.838f;
+    somatosensorialMeanMatrix[2][1] = 0.683f;
+    somatosensorialMeanMatrix[2][2] = 0.793f;
+    somatosensorialMeanMatrix[2][3] = 0.806f;
+    somatosensorialMeanMatrix[3][0] = 0.838f;
+    somatosensorialMeanMatrix[3][1] = 0.683f;
+    somatosensorialMeanMatrix[3][2] = 0.793f;
+    somatosensorialMeanMatrix[3][3] = 0.806f;
     float somatosensorialSdMatrix[4][4];
     //adjusted if > 0.2 = 0.2 and if < 0.05 = 0.05
-    somatosensorialSdMatrix[0][0] = 0.200f;
-    somatosensorialSdMatrix[0][1] = 0.050f;
-    somatosensorialSdMatrix[0][2] = 0.200f;
-    somatosensorialSdMatrix[0][3] = 0.200f;
-    somatosensorialSdMatrix[1][0] = 0.200f;
-    somatosensorialSdMatrix[1][1] = 0.200f;
-    somatosensorialSdMatrix[1][2] = 0.200f;
-    somatosensorialSdMatrix[1][3] = 0.200f;
-    somatosensorialSdMatrix[2][0] = 0.187f;
-    somatosensorialSdMatrix[2][1] = 0.200f;
-    somatosensorialSdMatrix[2][2] = 0.200f;
-    somatosensorialSdMatrix[2][3] = 0.200f;
-    somatosensorialSdMatrix[3][0] = 0.156f;
-    somatosensorialSdMatrix[3][1] = 0.200f;
-    somatosensorialSdMatrix[3][2] = 0.200f;
-    somatosensorialSdMatrix[3][3] = 0.193f;
+    somatosensorialSdMatrix[0][0] = 0.150f;
+    somatosensorialSdMatrix[0][1] = 0.150f;
+    somatosensorialSdMatrix[0][2] = 0.150f;
+    somatosensorialSdMatrix[0][3] = 0.150f;
+    somatosensorialSdMatrix[1][0] = 0.150f;
+    somatosensorialSdMatrix[1][1] = 0.150f;
+    somatosensorialSdMatrix[1][2] = 0.150f;
+    somatosensorialSdMatrix[1][3] = 0.150f;
+    somatosensorialSdMatrix[2][0] = 0.150f;
+    somatosensorialSdMatrix[2][1] = 0.150f;
+    somatosensorialSdMatrix[2][2] = 0.150f;
+    somatosensorialSdMatrix[2][3] = 0.150f;
+    somatosensorialSdMatrix[3][0] = 0.150f;
+    somatosensorialSdMatrix[3][1] = 0.150f;
+    somatosensorialSdMatrix[3][2] = 0.150f;
+    somatosensorialSdMatrix[3][3] = 0.150f;
     //Limit Calculation
     limite = (somatosensorialMeanMatrix[agePos][heightPos]-2*(somatosensorialSdMatrix[agePos][heightPos]));
     return limite;
