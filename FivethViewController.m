@@ -314,19 +314,19 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float vestibularMeanMatrix[4][4];
-    vestibularMeanMatrix[0][0] = 0.550f;
+    vestibularMeanMatrix[0][0] = 0.600f;
     vestibularMeanMatrix[0][1] = 0.700f;
     vestibularMeanMatrix[0][2] = 0.600f;
     vestibularMeanMatrix[0][3] = 0.600f;
-    vestibularMeanMatrix[1][0] = 0.550f;
+    vestibularMeanMatrix[1][0] = 0.600f;
     vestibularMeanMatrix[1][1] = 0.700f;
     vestibularMeanMatrix[1][2] = 0.600f;
     vestibularMeanMatrix[1][3] = 0.600f;
-    vestibularMeanMatrix[2][0] = 0.550f;
+    vestibularMeanMatrix[2][0] = 0.600f;
     vestibularMeanMatrix[2][1] = 0.700f;
     vestibularMeanMatrix[2][2] = 0.600f;
     vestibularMeanMatrix[2][3] = 0.600f;
-    vestibularMeanMatrix[3][0] = 0.550f;
+    vestibularMeanMatrix[3][0] = 0.600f;
     vestibularMeanMatrix[3][1] = 0.700f;
     vestibularMeanMatrix[3][2] = 0.600f;
     vestibularMeanMatrix[3][3] = 0.600f;
