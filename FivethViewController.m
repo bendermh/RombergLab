@@ -195,17 +195,24 @@
     float scoreDos = ((40.03-(area2-3.74))/(40.03));
     float scoreTres = ((179.33-(area3-19.18))/(179.33));
     float scoreCuatro = ((743.22-(area4-39.11))/(743.22));
-    //Falls Counting
+    //Falls & Negative Counting
     if (_buttonCondition1.state == TRUE) {scoreUno = 0;}
     if (_buttonCondition2.state == TRUE) {scoreDos = 0;}
     if (_buttonCondition3.state == TRUE) {scoreTres = 0;}
     if (_buttonCondition4.state == TRUE) {scoreCuatro = 0;}
+    if (scoreUno < 0) {scoreUno = 0;}
+    if (scoreDos < 0) {scoreDos = 0;}
+    if (scoreTres < 0) {scoreTres = 0;}
+    if (scoreCuatro < 0) {scoreCuatro = 0;}
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
     //Pre systems scores
-    float preScoreVestibular = (scoreUno/scoreCuatro);
-    float preScoreVisual = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));
-    float preScoreSomatosensorial = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));
+    float preScoreVestibular = 0;
+    float preScoreVisual = 0;
+    float preScoreSomatosensorial = 0;
+    if (scoreUno > 0){preScoreVestibular = (scoreCuatro/scoreUno);}
+    if ((scoreUno+scoreDos) > 0) {preScoreVisual = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));}
+    if ((scoreUno+scoreTres) > 0) {preScoreSomatosensorial = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));}
     //Normalized system scores Finally not used - We still use the preScores
     float ScoreVestibular = preScoreVestibular;
     float ScoreVisual = preScoreVisual;
