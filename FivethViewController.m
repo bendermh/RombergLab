@@ -203,7 +203,7 @@
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
     //Pre systems scores
-    float preScoreVestibular = (scoreCuatro/scoreUno);
+    float preScoreVestibular = (scoreUno/scoreCuatro);
     float preScoreVisual = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));
     float preScoreSomatosensorial = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));
     //Normalized system scores Finally not used - We still use the preScores
