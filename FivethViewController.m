@@ -211,8 +211,8 @@
     float preScoreVisual = 0;
     float preScoreSomatosensorial = 0;
     if (scoreUno > 0){preScoreVestibular = (scoreCuatro/scoreUno);}
-    if ((scoreUno+scoreDos) > 0) {preScoreVisual = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));}
-    if ((scoreUno+scoreTres) > 0) {preScoreSomatosensorial = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));}
+    if ((scoreUno+scoreDos) > 0) {preScoreSomatosensorial = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));}
+    if ((scoreUno+scoreTres) > 0) {preScoreVisual = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));}
     //Normalized system scores Finally not used - We still use the preScores
     float ScoreVestibular = preScoreVestibular;
     float ScoreVisual = preScoreVisual;
@@ -365,22 +365,22 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float visualMeanMatrix[4][4];
-    visualMeanMatrix[0][0] = 1.009f;
-    visualMeanMatrix[0][1] = 1.009f;
-    visualMeanMatrix[0][2] = 1.009f;
-    visualMeanMatrix[0][3] = 1.009f;
-    visualMeanMatrix[1][0] = 1.009f;
-    visualMeanMatrix[1][1] = 1.009f;
-    visualMeanMatrix[1][2] = 1.009f;
-    visualMeanMatrix[1][3] = 1.009f;
-    visualMeanMatrix[2][0] = 1.009f;
-    visualMeanMatrix[2][1] = 1.009f;
-    visualMeanMatrix[2][2] = 1.009f;
-    visualMeanMatrix[2][3] = 1.009f;
-    visualMeanMatrix[3][0] = 1.009f;
-    visualMeanMatrix[3][1] = 1.009f;
-    visualMeanMatrix[3][2] = 1.009f;
-    visualMeanMatrix[3][3] = 1.009f;
+    visualMeanMatrix[0][0] = 0.950f;
+    visualMeanMatrix[0][1] = 0.750f;
+    visualMeanMatrix[0][2] = 0.950f;
+    visualMeanMatrix[0][3] = 1.010f;
+    visualMeanMatrix[1][0] = 0.950f;
+    visualMeanMatrix[1][1] = 0.750f;
+    visualMeanMatrix[1][2] = 0.950f;
+    visualMeanMatrix[1][3] = 1.010f;
+    visualMeanMatrix[2][0] = 0.950f;
+    visualMeanMatrix[2][1] = 0.750f;
+    visualMeanMatrix[2][2] = 0.950f;
+    visualMeanMatrix[2][3] = 1.010f;
+    visualMeanMatrix[3][0] = 0.950f;
+    visualMeanMatrix[3][1] = 0.750f;
+    visualMeanMatrix[3][2] = 0.950f;
+    visualMeanMatrix[3][3] = 1.010f;
     float visualSdMatrix[4][4];
     visualSdMatrix[0][0] = 0.300f;
     visualSdMatrix[0][1] = 0.300f;
@@ -409,22 +409,23 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float somatosensorialMeanMatrix[4][4];
-    somatosensorialMeanMatrix[0][0] = 0.950f;
-    somatosensorialMeanMatrix[0][1] = 0.750f;
-    somatosensorialMeanMatrix[0][2] = 0.950f;
-    somatosensorialMeanMatrix[0][3] = 1.010f;
-    somatosensorialMeanMatrix[1][0] = 0.950f;
-    somatosensorialMeanMatrix[1][1] = 0.750f;
-    somatosensorialMeanMatrix[1][2] = 0.950f;
-    somatosensorialMeanMatrix[1][3] = 1.010f;
-    somatosensorialMeanMatrix[2][0] = 0.950f;
-    somatosensorialMeanMatrix[2][1] = 0.750f;
-    somatosensorialMeanMatrix[2][2] = 0.950f;
-    somatosensorialMeanMatrix[2][3] = 1.010f;
-    somatosensorialMeanMatrix[3][0] = 0.950f;
-    somatosensorialMeanMatrix[3][1] = 0.750f;
-    somatosensorialMeanMatrix[3][2] = 0.950f;
-    somatosensorialMeanMatrix[3][3] = 1.010f;
+    somatosensorialMeanMatrix[0][0] = 1.009f;
+    somatosensorialMeanMatrix[0][1] = 1.009f;
+    somatosensorialMeanMatrix[0][2] = 1.009f;
+    somatosensorialMeanMatrix[0][3] = 1.009f;
+    somatosensorialMeanMatrix[1][0] = 1.009f;
+    somatosensorialMeanMatrix[1][1] = 1.009f;
+    somatosensorialMeanMatrix[1][2] = 1.009f;
+    somatosensorialMeanMatrix[1][3] = 1.009f;
+    somatosensorialMeanMatrix[2][0] = 1.009f;
+    somatosensorialMeanMatrix[2][1] = 1.009f;
+    somatosensorialMeanMatrix[2][2] = 1.009f;
+    somatosensorialMeanMatrix[2][3] = 1.009f;
+    somatosensorialMeanMatrix[3][0] = 1.009f;
+    somatosensorialMeanMatrix[3][1] = 1.009f;
+    somatosensorialMeanMatrix[3][2] = 1.009f;
+    somatosensorialMeanMatrix[3][3] = 1.009f;
+
     float somatosensorialSdMatrix[4][4];
     //adjusted if > 0.2 = 0.2 and if < 0.05 = 0.05
     somatosensorialSdMatrix[0][0] = 0.300f;
