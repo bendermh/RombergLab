@@ -214,7 +214,7 @@
     float ScoreSomatosensorial = scoreDos;
     //Integrity
     float ScoreIntegrity = 0;
-    if (scoreCuatro >0){
+    if (scoreCuatro != 0){
         ScoreIntegrity = (scoreUno/scoreCuatro);
         
     }
