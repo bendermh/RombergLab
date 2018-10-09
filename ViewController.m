@@ -1023,8 +1023,8 @@ NSDate *Tiempo;
         FuY = 9.8 * ((arribaderecha+arribaizquierda)-(abajoderecha+abajoizquierda));
         FuT = 9.8 * (arribaderecha+abajoderecha+arribaizquierda+abajoizquierda);
         T1 = [Tiempo timeIntervalSinceNow]*-1;
-        COGX =((FuX*(0.022022345)*(21.48547))/FuT);
-        COGY =((FuY*(0.022022345)*(12.21421))/FuT);
+        COGX =((FuX*(0.022022345)*(21.48547))/FuT);//0.022 Is a factor to convert from cm to screen pixeles
+        COGY =((FuY*(0.022022345)*(12.21421))/FuT);//0.022 Is a factor to convert from cm to screen pixeles
     }
     else{
         E = YES;
