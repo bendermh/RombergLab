@@ -155,27 +155,31 @@
 //    output results
     self.globalScoreValue.stringValue = [NSString stringWithFormat:@"%i/100",sc];
     self.barGlobal.floatValue = scGlob;
-    self.barConsistency.floatValue = scInt;
     if (scGlob-limGlob > 0){
         [self.barVestibular setHidden:TRUE];
         [self.barVisual setHidden:TRUE];
         [self.barSomatic setHidden:TRUE];
+        [self.barConsistency setHidden:TRUE];
         if (@available(macOS 10.13, *)) {[self.barGlobal setFillColor:[NSColor greenColor]];}
         if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor greenColor]];}
         if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
         if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barConsistency setFillColor:[NSColor greenColor]];}
     }
     else {
         [self.barVestibular setHidden:FALSE];
         [self.barVisual setHidden:FALSE];
         [self.barSomatic setHidden:FALSE];
+        [self.barConsistency setHidden:FALSE];
         if (@available(macOS 10.13, *)) {[self.barGlobal setFillColor:[NSColor redColor]];}
         if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor greenColor]];}
         if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
         if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
+        if (@available(macOS 10.13, *)) {[self.barConsistency setFillColor:[NSColor greenColor]];}
         self.barVestibular.floatValue = scVest;
         self.barVisual.floatValue = scVis;
         self.barSomatic.floatValue = scSomat;
+        self.barConsistency.floatValue = scInt;
         if(scVest-limVest < 0){
             if (@available(macOS 10.13, *)) {[self.barVestibular setFillColor:[NSColor redColor]];}
         }
@@ -184,6 +188,9 @@
         }
         if(scSomat-limSomat < 0){
             if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor redColor]];}
+        }
+        if(scInt < 0.2){
+            if (@available(macOS 10.13, *)) {[self.barConsistency setFillColor:[NSColor redColor]];}
         }
     }
     self.betaInfo.stringValue = [NSString stringWithFormat:@"Global: %f/%f Vestibular:%f/%f Visual:%f/%f Somat:%f/%f",scGlob,limGlob,scVest,limVest,scVis,limVis,scSomat,limSomat];
@@ -200,25 +207,20 @@
     if (_buttonCondition2.state == TRUE) {scoreDos = 0;}
     if (_buttonCondition3.state == TRUE) {scoreTres = 0;}
     if (_buttonCondition4.state == TRUE) {scoreCuatro = 0;}
-    if (scoreUno < 0) {scoreUno = 0;}
-    if (scoreDos < 0) {scoreDos = 0;}
-    if (scoreTres < 0) {scoreTres = 0;}
-    if (scoreCuatro < 0) {scoreCuatro = 0;}
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
-    //Pre systems scores
-    float preScoreVestibular = 0;
-    float preScoreVisual = 0;
-    float preScoreSomatosensorial = 0;
-    if (scoreUno > 0){preScoreVestibular = (scoreCuatro/scoreUno);}
-    if ((scoreUno+scoreDos) > 0) {preScoreVisual = ((scoreTres+scoreCuatro)/(scoreUno+scoreDos));}
-    if ((scoreUno+scoreTres) > 0) {preScoreSomatosensorial = ((scoreDos+scoreCuatro)/(scoreUno+scoreTres));}
-    //Normalized system scores Finally not used - We still use the preScores
-    float ScoreVestibular = preScoreVestibular;
-    float ScoreVisual = preScoreVisual;
-    float ScoreSomatosensorial = preScoreSomatosensorial;
-    //By default integrity is allways ok, future implementation goes heare
-    float ScoreIntegrity = 1.0f;
+    float ScoreVestibular = scoreCuatro;
+    float ScoreVisual = scoreTres;
+    float ScoreSomatosensorial = scoreDos;
+    //Integrity
+    float ScoreIntegrity = 0;
+    if (scoreCuatro != 0){
+        ScoreIntegrity = (scoreUno/scoreCuatro);
+        
+    }
+    else {
+        ScoreIntegrity = (scoreUno/0.1f);
+    }
     NSArray *Scores = [NSArray arrayWithObjects:[NSNumber numberWithFloat:ScoreGlobal],[NSNumber numberWithFloat:ScoreVestibular],[NSNumber numberWithFloat:ScoreVisual],[NSNumber numberWithFloat:ScoreSomatosensorial],[NSNumber numberWithFloat:ScoreIntegrity],nil];
     return Scores;
 }
@@ -365,22 +367,22 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float visualMeanMatrix[4][4];
-    visualMeanMatrix[0][0] = 1.009f;
-    visualMeanMatrix[0][1] = 1.009f;
-    visualMeanMatrix[0][2] = 1.009f;
-    visualMeanMatrix[0][3] = 1.009f;
-    visualMeanMatrix[1][0] = 1.009f;
-    visualMeanMatrix[1][1] = 1.009f;
-    visualMeanMatrix[1][2] = 1.009f;
-    visualMeanMatrix[1][3] = 1.009f;
-    visualMeanMatrix[2][0] = 1.009f;
-    visualMeanMatrix[2][1] = 1.009f;
-    visualMeanMatrix[2][2] = 1.009f;
-    visualMeanMatrix[2][3] = 1.009f;
-    visualMeanMatrix[3][0] = 1.009f;
-    visualMeanMatrix[3][1] = 1.009f;
-    visualMeanMatrix[3][2] = 1.009f;
-    visualMeanMatrix[3][3] = 1.009f;
+    visualMeanMatrix[0][0] = 0.950f;
+    visualMeanMatrix[0][1] = 0.750f;
+    visualMeanMatrix[0][2] = 0.950f;
+    visualMeanMatrix[0][3] = 1.010f;
+    visualMeanMatrix[1][0] = 0.950f;
+    visualMeanMatrix[1][1] = 0.750f;
+    visualMeanMatrix[1][2] = 0.950f;
+    visualMeanMatrix[1][3] = 1.010f;
+    visualMeanMatrix[2][0] = 0.950f;
+    visualMeanMatrix[2][1] = 0.750f;
+    visualMeanMatrix[2][2] = 0.950f;
+    visualMeanMatrix[2][3] = 1.010f;
+    visualMeanMatrix[3][0] = 0.950f;
+    visualMeanMatrix[3][1] = 0.750f;
+    visualMeanMatrix[3][2] = 0.950f;
+    visualMeanMatrix[3][3] = 1.010f;
     float visualSdMatrix[4][4];
     visualSdMatrix[0][0] = 0.300f;
     visualSdMatrix[0][1] = 0.300f;
@@ -409,22 +411,23 @@
     //Limit Calculation
     //Matrix definition from statistical clinical trial
     float somatosensorialMeanMatrix[4][4];
-    somatosensorialMeanMatrix[0][0] = 0.950f;
-    somatosensorialMeanMatrix[0][1] = 0.750f;
-    somatosensorialMeanMatrix[0][2] = 0.950f;
-    somatosensorialMeanMatrix[0][3] = 1.010f;
-    somatosensorialMeanMatrix[1][0] = 0.950f;
-    somatosensorialMeanMatrix[1][1] = 0.750f;
-    somatosensorialMeanMatrix[1][2] = 0.950f;
-    somatosensorialMeanMatrix[1][3] = 1.010f;
-    somatosensorialMeanMatrix[2][0] = 0.950f;
-    somatosensorialMeanMatrix[2][1] = 0.750f;
-    somatosensorialMeanMatrix[2][2] = 0.950f;
-    somatosensorialMeanMatrix[2][3] = 1.010f;
-    somatosensorialMeanMatrix[3][0] = 0.950f;
-    somatosensorialMeanMatrix[3][1] = 0.750f;
-    somatosensorialMeanMatrix[3][2] = 0.950f;
-    somatosensorialMeanMatrix[3][3] = 1.010f;
+    somatosensorialMeanMatrix[0][0] = 1.009f;
+    somatosensorialMeanMatrix[0][1] = 1.009f;
+    somatosensorialMeanMatrix[0][2] = 1.009f;
+    somatosensorialMeanMatrix[0][3] = 1.009f;
+    somatosensorialMeanMatrix[1][0] = 1.009f;
+    somatosensorialMeanMatrix[1][1] = 1.009f;
+    somatosensorialMeanMatrix[1][2] = 1.009f;
+    somatosensorialMeanMatrix[1][3] = 1.009f;
+    somatosensorialMeanMatrix[2][0] = 1.009f;
+    somatosensorialMeanMatrix[2][1] = 1.009f;
+    somatosensorialMeanMatrix[2][2] = 1.009f;
+    somatosensorialMeanMatrix[2][3] = 1.009f;
+    somatosensorialMeanMatrix[3][0] = 1.009f;
+    somatosensorialMeanMatrix[3][1] = 1.009f;
+    somatosensorialMeanMatrix[3][2] = 1.009f;
+    somatosensorialMeanMatrix[3][3] = 1.009f;
+
     float somatosensorialSdMatrix[4][4];
     //adjusted if > 0.2 = 0.2 and if < 0.05 = 0.05
     somatosensorialSdMatrix[0][0] = 0.300f;
