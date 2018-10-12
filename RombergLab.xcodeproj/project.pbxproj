@@ -22,6 +22,8 @@
 		CF4173511C10FDC300A27AB0 /* FourthWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173501C10FDC300A27AB0 /* FourthWindowController.m */; };
 		CF4173541C10FE0100A27AB0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173531C10FE0100A27AB0 /* ThirdViewController.m */; };
 		CF4173571C10FE2900A27AB0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173561C10FE2900A27AB0 /* FourthViewController.m */; };
+		CF65795A21707BC6005C2D3D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CF65794C21707BC6005C2D3D /* LICENSE */; };
+		CF65795C21707BDD005C2D3D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CF65795B21707BDD005C2D3D /* README.md */; };
 		CF665F4D1C0B83900093F569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665F4F1C0B83900093F569 /* Main.storyboard */; };
 		CF7E5DDD1C0F7ABA00214499 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CF7E5DDC1C0F7ABA00214499 /* Credits.html */; };
 		CF91D4B71C0E44AF00C0641A /* Disconnect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */; };
@@ -137,6 +139,8 @@
 		CF4173531C10FE0100A27AB0 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		CF4173551C10FE2900A27AB0 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		CF4173561C10FE2900A27AB0 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		CF65794C21707BC6005C2D3D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CF65795B21707BDD005C2D3D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CF665F501C0B83BB0093F569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF7115BE1D3EDC93004852B1 /* RombergLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RombergLab.entitlements; sourceTree = "<group>"; };
 		CF7E5DDC1C0F7ABA00214499 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				CF7115BE1D3EDC93004852B1 /* RombergLab.entitlements */,
+				CF65794C21707BC6005C2D3D /* LICENSE */,
+				CF65795B21707BDD005C2D3D /* README.md */,
 				CF7E5DDC1C0F7ABA00214499 /* Credits.html */,
 				CFFDE6CA1C0B822500E08C64 /* AppDelegate.h */,
 				CFFDE6CB1C0B822500E08C64 /* AppDelegate.m */,
@@ -452,9 +458,11 @@
 			files = (
 				CF0352471C0CC44500B448CD /* Success.m4a in Resources */,
 				CF7E5DDD1C0F7ABA00214499 /* Credits.html in Resources */,
+				CF65795A21707BC6005C2D3D /* LICENSE in Resources */,
 				CF9A38191C134972007106F8 /* contacto.m4a in Resources */,
 				CF25558C1C0B85700008C853 /* Images.xcassets in Resources */,
 				CF665F4D1C0B83900093F569 /* Main.storyboard in Resources */,
+				CF65795C21707BDD005C2D3D /* README.md in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				CF91D4B71C0E44AF00C0641A /* Disconnect.m4a in Resources */,
 			);
