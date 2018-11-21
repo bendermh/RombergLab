@@ -94,8 +94,15 @@
 }
 
 - (IBAction)itemweb:(id)sender{
-[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://mlibra.com/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://mlibra.com/"]];
 }
+- (IBAction)itemwebValidation:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://doi.org/10.1080/00016489.2016.1204665"]];
+}
+- (IBAction)itemwebNormalization:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://doi.org/10.1007/s00405-018-5170-6"]];
+}
+
 
 - (IBAction)itemnormal:(id)sender {
     [[NSNotificationCenter defaultCenter]
