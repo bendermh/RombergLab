@@ -108,7 +108,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +147,7 @@
 		CF92A5B41C14C91D000917DE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		CF92A5B51C14C91D000917DE /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF9A38181C134972007106F8 /* contacto.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = contacto.m4a; path = Sonidos/contacto.m4a; sourceTree = "<group>"; };
+		CFAB47472258E74B0095CD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFC285BE1C1116DA0017601E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CFCE00C11F5D414D00195E89 /* FivethWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FivethWindowController.h; sourceTree = "<group>"; };
 		CFCE00C21F5D414D00195E89 /* FivethWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FivethWindowController.m; sourceTree = "<group>"; };
@@ -370,7 +370,7 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RombergLab" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
@@ -497,8 +497,8 @@
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
 				CF92A5B51C14C91D000917DE /* es */,
+				CFAB47472258E74B0095CD77 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

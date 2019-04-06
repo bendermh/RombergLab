@@ -52,7 +52,7 @@
     NSGraphicsContext *bitmapContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:layerImage];
     CGContextRef context             = (CGContextRef)bitmapContext.graphicsPort;
 
-    CGContextClearRect( context, CPTRectMake(0.0, 0.0, boundsSize.width, boundsSize.height) );
+    CGContextClearRect(context, CPTRectMake(0.0, 0.0, boundsSize.width, boundsSize.height) );
     CGContextSetAllowsAntialiasing(context, true);
     CGContextSetShouldSmoothFonts(context, false);
     [self layoutAndRenderInContext:context];
@@ -62,22 +62,6 @@
     [image addRepresentation:layerImage];
 
     return image;
-}
-
-@end
-
-#pragma mark - CPTColor
-
-@implementation CPTColor(CPTPlatformSpecificColorExtensions)
-
-/** @property nsColor
- *  @brief Gets the color value as an NSColor.
- **/
-@dynamic nsColor;
-
--(nonnull NSColor *)nsColor
-{
-    return [NSColor colorWithCIColor:[CIColor colorWithCGColor:self.cgColor]];
 }
 
 @end

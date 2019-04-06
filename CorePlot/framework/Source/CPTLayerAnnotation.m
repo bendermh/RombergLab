@@ -119,13 +119,22 @@
 -(nullable instancetype)initWithCoder:(nonnull NSCoder *)coder
 {
     if ( (self = [super initWithCoder:coder]) ) {
-        anchorLayer = [coder decodeObjectOfClass:[CPTLayer class]
-                                          forKey:@"CPTLayerAnnotation.anchorLayer"];
+        CPTLayer *anchor = [coder decodeObjectOfClass:[CPTLayer class]
+                                               forKey:@"CPTLayerAnnotation.anchorLayer"];
         xConstraints = [coder decodeObjectOfClass:[CPTConstraints class]
                                            forKey:@"CPTLayerAnnotation.xConstraints"];
         yConstraints = [coder decodeObjectOfClass:[CPTConstraints class]
                                            forKey:@"CPTLayerAnnotation.yConstraints"];
         rectAnchor = (CPTRectAnchor)[coder decodeIntegerForKey:@"CPTLayerAnnotation.rectAnchor"];
+
+        if ( anchor ) {
+            anchorLayer = anchor;
+
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(positionContentLayer)
+                                                         name:CPTLayerBoundsDidChangeNotification
+                                                       object:anchor];
+        }
     }
     return self;
 }
@@ -159,7 +168,7 @@
 
             content.anchorPoint = self.contentAnchorPoint;
             content.position    = newPosition;
-            content.transform   = CATransform3DMakeRotation( self.rotation, CPTFloat(0.0), CPTFloat(0.0), CPTFloat(1.0) );
+            content.transform   = CATransform3DMakeRotation(self.rotation, CPTFloat(0.0), CPTFloat(0.0), CPTFloat(1.0) );
             [content pixelAlign];
         }
     }

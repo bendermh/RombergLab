@@ -1,10 +1,10 @@
 #import "CPTAnimation.h"
 
+#import "_CPTAnimationTimingFunctions.h"
 #import "CPTAnimationOperation.h"
 #import "CPTAnimationPeriod.h"
 #import "CPTDefinitions.h"
 #import "CPTPlotRange.h"
-#import "_CPTAnimationTimingFunctions.h"
 
 static const CGFloat kCPTAnimationFrameRate = CPTFloat(1.0 / 60.0); // 60 frames per second
 
@@ -334,11 +334,11 @@ typedef NSMutableArray<CPTAnimationOperation *> CPTMutableAnimationArray;
                     CGFloat progress = timingFunction(currentTime - startTime, duration);
 
                     CPTDictionary *parameters = @{
-                        CPTAnimationOperationKey: animationOperation,
-                        CPTAnimationValueKey: [period tweenedValueForProgress:progress],
-                        CPTAnimationValueClassKey: valueClass ? valueClass : [NSNull null],
-                        CPTAnimationStartedKey: @(started),
-                        CPTAnimationFinishedKey: @(currentTime >= endTime)
+                                                    CPTAnimationOperationKey: animationOperation,
+                                                    CPTAnimationValueKey: [period tweenedValueForProgress:progress],
+                                                    CPTAnimationValueClassKey: valueClass ? valueClass : [NSNull null],
+                                                    CPTAnimationStartedKey: @(started),
+                                                    CPTAnimationFinishedKey: @(currentTime >= endTime)
                     };
 
                     // Used -performSelectorOnMainThread:... instead of GCD to ensure the animation continues to run in all run loop common modes.
@@ -425,7 +425,7 @@ typedef NSMutableArray<CPTAnimationOperation *> CPTMutableAnimationArray;
                 invocation.target   = boundObject;
                 invocation.selector = boundSetter;
 
-                void *buffer = malloc(bufferSize);
+                void *buffer = calloc(1, bufferSize);
                 [value getValue:buffer];
                 [invocation setArgument:buffer atIndex:2];
                 free(buffer);
