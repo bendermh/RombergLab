@@ -11,6 +11,7 @@
 @interface FivethViewController : NSViewController
 {
     float A1,A2,A3,A4;
+    bool isRealPostur;
 }
 @property NSMutableArray *datos;
 @property NSMutableArray *datosCondicion1;

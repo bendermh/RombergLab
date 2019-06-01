@@ -15,6 +15,9 @@
 
 @implementation AppDelegate
 
+@synthesize myWindowControllerA;
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
   
@@ -142,6 +145,13 @@
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"Terminando"
      object:nil];
+}
+
+- (IBAction)externalData:(id)sender {
+    
+    NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil]; // get a reference to the storyboard
+    myWindowControllerA = [storyBoard instantiateControllerWithIdentifier:@"SextaVentana"]; // instantiate your window controller
+    [myWindowControllerA showWindow:self];
 }
 
 

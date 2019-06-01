@@ -496,6 +496,8 @@
 
 "sJg-tA-W02.title" = "Somático:";
 
+"jHo-5h-czD.title" = "LOS DATOS ANALIZADOS NO SON REALES";
+
 /* Class = "NSMenuItem"; title = "About RombergLab"; ObjectID = "5kV-Vb-QxS"; */
 "Wfz-p6-NsX.title" = "Estudios Publicados";
 
@@ -505,11 +507,8 @@
 /* Class = "NSMenuItem"; title = "About RombergLab"; ObjectID = "5kV-Vb-QxS"; */
 "vk6-eG-mIm.title" = "Normalización de puntuaciones";
 
+"P86-MO-MXB.title" = "INTRODUZCA DATOS OBTENIDOS";
 
+"Ceo-xn-EKd.title" = "Analizar datos...";
 
-
-
-
-
-
-
+"buf-yF-xVf.title" = "Analizar datos previos...";

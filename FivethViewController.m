@@ -25,6 +25,7 @@
 @property (weak) IBOutlet NSView *areaReport;
 @property (weak) IBOutlet NSTextField *globalScoreValue;
 @property (weak) IBOutlet NSTextField *betaInfo;
+@property (weak) IBOutlet NSTextField *externalData;
 
 @end
 
@@ -203,10 +204,10 @@
     float scoreTres = ((179.33-(area3-19.18))/(179.33));
     float scoreCuatro = ((743.22-(area4-39.11))/(743.22));
     //Falls & Negative Counting
-    if (_buttonCondition1.state == TRUE) {scoreUno = 0;}
-    if (_buttonCondition2.state == TRUE) {scoreDos = 0;}
-    if (_buttonCondition3.state == TRUE) {scoreTres = 0;}
-    if (_buttonCondition4.state == TRUE) {scoreCuatro = 0;}
+    if (_buttonCondition1.state == TRUE) {scoreUno = -4;}
+    if (_buttonCondition2.state == TRUE) {scoreDos = -4;}
+    if (_buttonCondition3.state == TRUE) {scoreTres = -4;}
+    if (_buttonCondition4.state == TRUE) {scoreCuatro = -4;}
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
     float ScoreVestibular = scoreCuatro;
@@ -452,7 +453,11 @@
 }
 
 -(void)analiza:(NSNotification*)notificacion{
-    
+    NSString *isReal = [notificacion.userInfo objectForKey:@"isReal"];
+    if ([isReal  isEqual: @"true"]){
+    // se ejecuta si viene de posturografía
+    isRealPostur = true;
+        [self.externalData setHidden:true];
     //Metodo para cargar los datos en esta clase
     datos = (NSMutableArray *)notificacion.object;
     datosCondicion1 = [NSMutableArray array];
@@ -514,6 +519,17 @@
     if ([datosCondicion4 count]){
         [self AreaCuatro];
     }
+    }
+    else {
+        isRealPostur = false;
+        [self.externalData setHidden:false];
+        NSArray *importedAreas = (NSArray *)notificacion.object;
+        A1 = [[importedAreas objectAtIndex:0]floatValue];
+        A2 = [[importedAreas objectAtIndex:1]floatValue];
+        A3 = [[importedAreas objectAtIndex:2]floatValue];
+        A4 = [[importedAreas objectAtIndex:3]floatValue];
+    }
+    
     if(A1+A2+A3+A4>0){
         NSLog(@"Areas: %0.2f %0.2f %0.2f %0.2f", A1, A2, A3, A4);
     }
