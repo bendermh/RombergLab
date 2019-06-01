@@ -27,6 +27,10 @@ BOOL reconectarOn;
 - (IBAction)losmedio:(id)sender;
 - (IBAction)losflojo:(id)sender;
 - (IBAction)itemexit:(id)sender;
+- (IBAction)externalData:(id)sender;
+
+@property NSWindowController *myWindowControllerA;
+
 
 @end
 

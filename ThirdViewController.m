@@ -1169,10 +1169,11 @@
     NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil]; // get a reference to the storyboard
     myWindowController4 = [storyBoard instantiateControllerWithIdentifier:@"QuintaVentana"]; // instantiate your window controller
     [myWindowController4 showWindow:self];
-    
+    NSDictionary *isRealPosturography = @{@"isReal":@"true"};
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"InformePosturografia"
-     object:datos];
+     object:datos
+     userInfo:isRealPosturography];
 }
 
 - (IBAction)guardarfoto:(id)sender {
