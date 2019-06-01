@@ -13,6 +13,8 @@
 @property (weak) IBOutlet NSTextField *area2Field;
 @property (weak) IBOutlet NSTextField *area3Field;
 @property (weak) IBOutlet NSTextField *area4Field;
+@property (weak) IBOutlet NSTextField *textoSuperior;
+@property (weak) IBOutlet NSButton *botonAnalisis;
 
 @end
 
@@ -23,6 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    NSString *userLocale = [[NSLocale currentLocale] localeIdentifier];
+    NSString *userLanguage = [userLocale substringToIndex:2];
+    if([userLanguage isEqualToString:@"es"]){
+        self.textoSuperior.stringValue = @"INTRODUCA DATOS GUARDADOS";
+        self.botonAnalisis.title = @"Importar datos...";
+    }
+    else {
+        self.textoSuperior.stringValue = @"INPUT RECORDED DATA";
+        self.botonAnalisis.title = @"Import data...";
+    }
 }
 - (IBAction)analizeData:(id)sender {
     
@@ -45,8 +57,27 @@
              object:areas
              userInfo:isRealPosturography];
         }
+        else {
+            [self inputWarning];
+        }
     }
-    
+    else {
+        [self inputWarning];
+    }
 }
+-(void)inputWarning {
+    NSAlert *alert = [[NSAlert alloc] init];
+    NSString *userLocale = [[NSLocale currentLocale] localeIdentifier];
+    NSString *userLanguage = [userLocale substringToIndex:2];
+    if([userLanguage isEqualToString:@"es"]){
+        [alert setMessageText:@"Campos introducidos incorrectos"];
+        [alert setInformativeText:@"Todas las áreas deben ser numéricas y estar en un rango entre 0 y 1500. El separador decimal es el punto (.), revise los datos"];
+    }
+    else{
+        [alert setMessageText:@"Not valid data"];
+        [alert setInformativeText:@"All inputs must be numeric in a range from 0 to 1500"];
+    }
+    [alert addButtonWithTitle:@"OK"];
+    [alert runModal];}
 
 @end

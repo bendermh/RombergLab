@@ -27,6 +27,7 @@
 @property (weak) IBOutlet NSTextField *betaInfo;
 @property (weak) IBOutlet NSTextField *externalData;
 
+
 @end
 
 @implementation FivethViewController
@@ -52,9 +53,19 @@
     if (@available(macOS 10.13, *)) {[self.barVisual setFillColor:[NSColor greenColor]];}
     if (@available(macOS 10.13, *)) {[self.barSomatic setFillColor:[NSColor greenColor]];}
     if (@available(macOS 10.13, *)) {[self.barConsistency setFillColor:[NSColor greenColor]];}
-//Date set
+    //Date set
     NSDate *today = [NSDate date];
     self.labelDate.stringValue = [self.formatterDate stringFromDate:today];
+    //Localization error fix
+    NSString *userLocale = [[NSLocale currentLocale] localeIdentifier];
+    NSString *userLanguage = [userLocale substringToIndex:2];
+    if([userLanguage isEqualToString:@"es"]){
+        self.externalData.stringValue = @"LOS DATOS A ANALIZAR HAN SIDO INTRODUCIDOS A MANO";
+    }
+    else {
+        self.externalData.stringValue = @"ANALIZED DATA IS NOT FROM REAL POSTUROGRAPHY";
+    }
+    
 }
 - (IBAction)buttonCalculate:(id)sender {
     if ([self Validate]) {
@@ -122,7 +133,7 @@
     NSDate *birth = self.fieldBirthday.dateValue;
     NSTimeInterval rawAge = [today timeIntervalSinceDate:birth];
     int age = (rawAge/(365*24*60*60));
-    NSLog(@"Under construction age: %i height:%i",age,height);
+    NSLog(@"Age: %i height:%i",age,height);
     float areaUno = A1;
     float areaDos = A2;
     float areaTres = A3;
@@ -146,14 +157,14 @@
     float limVest = [TestNormals[1] floatValue];
     float limVis = [TestNormals[2] floatValue];
     float limSomat = [TestNormals[3] floatValue];
-//  Put results in view
+    //  Put results in view
     int sc = round(scGlob*100);
-//    Check for NaN values
+    //    Check for NaN values
     if (limGlob != limGlob){limGlob = 0;}
     if (limVest != limVest){limVest = 0;}
     if (limVis != limVis){limVis = 0;}
     if (limSomat != limSomat){limSomat = 0;}
-//    output results
+    //    output results
     self.globalScoreValue.stringValue = [NSString stringWithFormat:@"%i/100",sc];
     self.barGlobal.floatValue = scGlob;
     if (scGlob-limGlob > 0){
@@ -428,7 +439,7 @@
     somatosensorialMeanMatrix[3][1] = 1.009f;
     somatosensorialMeanMatrix[3][2] = 1.009f;
     somatosensorialMeanMatrix[3][3] = 1.009f;
-
+    
     float somatosensorialSdMatrix[4][4];
     //adjusted if > 0.2 = 0.2 and if < 0.05 = 0.05
     somatosensorialSdMatrix[0][0] = 0.300f;
@@ -455,70 +466,70 @@
 -(void)analiza:(NSNotification*)notificacion{
     NSString *isReal = [notificacion.userInfo objectForKey:@"isReal"];
     if ([isReal  isEqual: @"true"]){
-    // se ejecuta si viene de posturografía
-    isRealPostur = true;
+        // se ejecuta si viene de posturografía
+        isRealPostur = true;
         [self.externalData setHidden:true];
-    //Metodo para cargar los datos en esta clase
-    datos = (NSMutableArray *)notificacion.object;
-    datosCondicion1 = [NSMutableArray array];
-    datosCondicion2 = [NSMutableArray array];
-    datosCondicion3 = [NSMutableArray array];
-    datosCondicion4 = [NSMutableArray array];
-    
-    
-    NSMutableArray *DatosX = [NSMutableArray array];
-    NSMutableArray *DatosY = [NSMutableArray array];
-    NSMutableArray *Modo = [NSMutableArray array];
-    float Prueba;
-    
-    for (int i = 0;i < [datos count];i++){
-        [DatosX addObject:datos[i][3]];
-        [DatosY addObject:datos[i][4]];
-        [Modo addObject:datos[i][0]];
-    }
-    
-    for (int i = 0;i < [datos count];i++){
+        //Metodo para cargar los datos en esta clase
+        datos = (NSMutableArray *)notificacion.object;
+        datosCondicion1 = [NSMutableArray array];
+        datosCondicion2 = [NSMutableArray array];
+        datosCondicion3 = [NSMutableArray array];
+        datosCondicion4 = [NSMutableArray array];
         
-        Prueba = [[Modo objectAtIndex:i] floatValue];
-        if(Prueba == 3.1f){
-            float valorX = [[DatosX objectAtIndex:i] doubleValue];
-            float valorY = [[DatosY objectAtIndex:i] doubleValue];
-            [datosCondicion1 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+        
+        NSMutableArray *DatosX = [NSMutableArray array];
+        NSMutableArray *DatosY = [NSMutableArray array];
+        NSMutableArray *Modo = [NSMutableArray array];
+        float Prueba;
+        
+        for (int i = 0;i < [datos count];i++){
+            [DatosX addObject:datos[i][3]];
+            [DatosY addObject:datos[i][4]];
+            [Modo addObject:datos[i][0]];
         }
-        if(Prueba == 3.2f){
-            float valorX = [[DatosX objectAtIndex:i] doubleValue];
-            float valorY = [[DatosY objectAtIndex:i] doubleValue];
-            [datosCondicion2 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+        
+        for (int i = 0;i < [datos count];i++){
+            
+            Prueba = [[Modo objectAtIndex:i] floatValue];
+            if(Prueba == 3.1f){
+                float valorX = [[DatosX objectAtIndex:i] doubleValue];
+                float valorY = [[DatosY objectAtIndex:i] doubleValue];
+                [datosCondicion1 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+            }
+            if(Prueba == 3.2f){
+                float valorX = [[DatosX objectAtIndex:i] doubleValue];
+                float valorY = [[DatosY objectAtIndex:i] doubleValue];
+                [datosCondicion2 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+            }
+            if(Prueba == 3.3f){
+                float valorX = [[DatosX objectAtIndex:i] doubleValue];
+                float valorY = [[DatosY objectAtIndex:i] doubleValue];
+                [datosCondicion3 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+            }
+            if(Prueba == 3.4f){
+                float valorX = [[DatosX objectAtIndex:i] doubleValue];
+                float valorY = [[DatosY objectAtIndex:i] doubleValue];
+                [datosCondicion4 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+            }
         }
-        if(Prueba == 3.3f){
-            float valorX = [[DatosX objectAtIndex:i] doubleValue];
-            float valorY = [[DatosY objectAtIndex:i] doubleValue];
-            [datosCondicion3 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+        
+        A1 = 0.0f;
+        A2 = 0.0f;
+        A3 = 0.0f;
+        A4 = 0.0f;
+        
+        if ([datosCondicion1 count]){
+            [self AreaUno];
         }
-        if(Prueba == 3.4f){
-            float valorX = [[DatosX objectAtIndex:i] doubleValue];
-            float valorY = [[DatosY objectAtIndex:i] doubleValue];
-            [datosCondicion4 addObject:[NSValue valueWithPoint:NSMakePoint(valorX, valorY)]];
+        if ([datosCondicion2 count]){
+            [self AreaDos];
         }
-    }
-    
-    A1 = 0.0f;
-    A2 = 0.0f;
-    A3 = 0.0f;
-    A4 = 0.0f;
-    
-    if ([datosCondicion1 count]){
-        [self AreaUno];
-    }
-    if ([datosCondicion2 count]){
-        [self AreaDos];
-    }
-    if ([datosCondicion3 count]){
-        [self AreaTres];
-    }
-    if ([datosCondicion4 count]){
-        [self AreaCuatro];
-    }
+        if ([datosCondicion3 count]){
+            [self AreaTres];
+        }
+        if ([datosCondicion4 count]){
+            [self AreaCuatro];
+        }
     }
     else {
         isRealPostur = false;

@@ -146,7 +146,6 @@
 		CF7115BE1D3EDC93004852B1 /* RombergLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RombergLab.entitlements; sourceTree = "<group>"; };
 		CF7E5DDC1C0F7ABA00214499 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Disconnect.m4a; path = Sonidos/Disconnect.m4a; sourceTree = "<group>"; };
-		CF92A5B41C14C91D000917DE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		CF92A5B51C14C91D000917DE /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF9A38181C134972007106F8 /* contacto.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = contacto.m4a; path = Sonidos/contacto.m4a; sourceTree = "<group>"; };
 		CFAB47472258E74B0095CD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		CFCE00C21F5D414D00195E89 /* FivethWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FivethWindowController.m; sourceTree = "<group>"; };
 		CFCE00D11F5D417700195E89 /* FivethViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FivethViewController.h; sourceTree = "<group>"; };
 		CFCE00D21F5D417700195E89 /* FivethViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FivethViewController.m; sourceTree = "<group>"; };
+		CFF2683422A263430032C84B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		CFFA5D4722A1C7D30040CDB9 /* sixthWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sixthWindowController.h; sourceTree = "<group>"; };
 		CFFA5D4822A1C7D30040CDB9 /* sixthWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sixthWindowController.m; sourceTree = "<group>"; };
 		CFFA5D4A22A1C8340040CDB9 /* sixthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sixthViewController.h; sourceTree = "<group>"; };
@@ -519,7 +519,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF665F501C0B83BB0093F569 /* Base */,
-				CF92A5B41C14C91D000917DE /* es */,
+				CFF2683422A263430032C84B /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
