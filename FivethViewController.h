@@ -10,7 +10,7 @@
 
 @interface FivethViewController : NSViewController
 {
-    float A1,A2,A3,A4;
+    float A1,A2,A3,A4,fallenScore;
     bool isRealPostur;
 }
 @property NSMutableArray *datos;

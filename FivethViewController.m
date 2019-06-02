@@ -27,7 +27,6 @@
 @property (weak) IBOutlet NSTextField *betaInfo;
 @property (weak) IBOutlet NSTextField *externalData;
 
-
 @end
 
 @implementation FivethViewController
@@ -38,11 +37,10 @@
 @synthesize datosCondicion3;
 @synthesize datosCondicion4;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    
+    fallenScore = -2.2f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(analiza:)
                                                  name:@"InformePosturografia"
@@ -215,10 +213,10 @@
     float scoreTres = ((179.33-(area3-19.18))/(179.33));
     float scoreCuatro = ((743.22-(area4-39.11))/(743.22));
     //Falls & Negative Counting
-    if (_buttonCondition1.state == TRUE) {scoreUno = -4;}
-    if (_buttonCondition2.state == TRUE) {scoreDos = -4;}
-    if (_buttonCondition3.state == TRUE) {scoreTres = -4;}
-    if (_buttonCondition4.state == TRUE) {scoreCuatro = -4;}
+    if (_buttonCondition1.state == TRUE) {scoreUno = fallenScore;}
+    if (_buttonCondition2.state == TRUE) {scoreDos = fallenScore;}
+    if (_buttonCondition3.state == TRUE) {scoreTres = fallenScore;}
+    if (_buttonCondition4.state == TRUE) {scoreCuatro = fallenScore;}
     //Global score
     float ScoreGlobal = ((scoreUno+scoreDos+scoreTres+scoreCuatro)/4);
     float ScoreVestibular = scoreCuatro;
