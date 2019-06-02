@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    fallenScore = -2.2f;
+    fallenScore = -2.5f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(analiza:)
                                                  name:@"InformePosturografia"
