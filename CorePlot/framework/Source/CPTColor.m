@@ -11,6 +11,8 @@
 
 #if TARGET_OS_OSX
 @property (nonatomic, readonly, nullable) NSColor *nsColorCache;
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+@property (nonatomic, readonly, nullable) UIColor *uiColorCache;
 #endif
 @end
 
@@ -52,6 +54,31 @@
     }
 }
 
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+
+/** @internal
+ *  @property nullable UIColor *uiColorCache
+ *  @brief The UIColor to wrap around.
+ **/
+@synthesize uiColorCache;
+
+/** @property nonnull UIColor *uiColor
+ *  @brief The UIColor to wrap around.
+ **/
+@dynamic uiColor;
+
+-(UIColor *)uiColor
+{
+    UIColor *theUIColor = self.uiColorCache;
+
+    if ( theUIColor ) {
+        return theUIColor;
+    }
+    else {
+        return [UIColor colorWithCGColor:self.cgColor];
+    }
+}
+
 #endif
 
 /** @property nonnull CGColorRef cgColor
@@ -65,6 +92,11 @@
     NSColor *theNSColor = self.nsColorCache;
     if ( theNSColor ) {
         return theNSColor.CGColor;
+    }
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    UIColor *theUIColor = self.uiColorCache;
+    if ( theUIColor ) {
+        return theUIColor.CGColor;
     }
 #endif
     return cgColor;
@@ -383,6 +415,20 @@
     return [[self alloc] initWithNSColor:newNSColor];
 }
 
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+
+/** @brief Creates and returns a new CPTColor instance initialized with the provided UIColor.
+ *
+ *  UIColor can be a dynamic system color or catalog color. This adds support for dark mode in iOS13.
+ *
+ *  @param newUIColor The color to wrap.
+ *  @return A new CPTColor instance initialized with the provided UIColor.
+ **/
++(nonnull instancetype)colorWithUIColor:(nonnull UIColor *)newUIColor
+{
+    return [[self alloc] initWithUIColor:newUIColor];
+}
+
 #endif
 
 #pragma mark -
@@ -395,7 +441,7 @@
  **/
 -(nonnull instancetype)initWithCGColor:(nonnull CGColorRef)newCGColor
 {
-    if ( (self = [super init]) ) {
+    if ((self = [super init])) {
         CGColorRetain(newCGColor);
         cgColor = newCGColor;
     }
@@ -435,8 +481,25 @@
  **/
 -(nonnull instancetype)initWithNSColor:(nonnull NSColor *)newNSColor
 {
-    if ( (self = [super init]) ) {
+    if ((self = [super init])) {
         nsColorCache = newNSColor;
+    }
+    return self;
+}
+
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+
+/** @brief Initializes a newly allocated CPTColor object with the provided UIColor.
+ *
+ *  UIColor can be a dynamic system color or catalog color. This adds support for dark mode in iOS13.
+ *
+ *  @param newUIColor The color to wrap.
+ *  @return The initialized CPTColor object.
+ **/
+-(nonnull instancetype)initWithUIColor:(nonnull UIColor *)newUIColor
+{
+    if ((self = [super init])) {
+        uiColorCache = newUIColor;
     }
     return self;
 }
@@ -473,6 +536,12 @@
         NSColor *newNSColor = [theNSColor colorWithAlphaComponent:alpha];
         return [[self class] colorWithNSColor:newNSColor];
     }
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    UIColor *theUIColor = self.uiColorCache;
+    if ( theUIColor ) {
+        UIColor *newUIColor = [theUIColor colorWithAlphaComponent:alpha];
+        return [[self class] colorWithUIColor:newUIColor];
+    }
 #endif
     CGColorRef newCGColor = CGColorCreateCopyWithAlpha(self.cgColor, alpha);
     CPTColor *newColor    = [[self class] colorWithCGColor:newCGColor];
@@ -502,6 +571,8 @@
 {
 #if TARGET_OS_OSX
     [coder encodeConditionalObject:self.nsColorCache forKey:@"CPTColor.nsColorCache"];
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    [coder encodeConditionalObject:self.uiColorCache forKey:@"CPTColor.uiColorCache"];
 #endif
 
     CGColorRef theColor = self.cgColor;
@@ -527,19 +598,25 @@
  */
 -(nullable instancetype)initWithCoder:(nonnull NSCoder *)coder
 {
-    if ( (self = [super init]) ) {
+    if ((self = [super init])) {
 #if TARGET_OS_OSX
         NSColor *decodedNSColor = [coder decodeObjectOfClass:[NSColor class]
                                                       forKey:@"CPTColor.nsColorCache"];
         if ( decodedNSColor ) {
             nsColorCache = decodedNSColor;
         }
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+        UIColor *decodedUIColor = [coder decodeObjectOfClass:[UIColor class]
+                                                      forKey:@"CPTColor.uiColorCache"];
+        if ( decodedUIColor ) {
+            uiColorCache = decodedUIColor;
+        }
 #endif
         CGColorSpaceRef colorSpace = [coder newCGColorSpaceDecodeForKey:@"CPTColor.colorSpace"];
 
         size_t numberOfComponents = (size_t)[coder decodeInt64ForKey:@"CPTColor.numberOfComponents"];
 
-        CGFloat *colorComponents = calloc(numberOfComponents, sizeof(CGFloat) );
+        CGFloat *colorComponents = calloc(numberOfComponents, sizeof(CGFloat));
 
         for ( size_t i = 0; i < numberOfComponents; i++ ) {
             NSString *newKey = [[NSString alloc] initWithFormat:@"CPTColor.component[%zu]", i];
@@ -580,6 +657,12 @@
         CPTColor *colorCopy = [[[self class] allocWithZone:zone] initWithNSColor:nsColorCopy];
         return colorCopy;
     }
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    UIColor *uiColorCopy = [self.uiColorCache copyWithZone:zone];
+    if ( uiColorCopy ) {
+        CPTColor *colorCopy = [[[self class] allocWithZone:zone] initWithUIColor:uiColorCopy];
+        return colorCopy;
+    }
 #endif
     CGColorRef cgColorCopy = NULL;
 
@@ -615,7 +698,7 @@
         return YES;
     }
     else if ( [object isKindOfClass:[self class]] ) {
-        return CGColorEqualToColor(self.cgColor, ( (CPTColor *)object ).cgColor);
+        return CGColorEqualToColor(self.cgColor, ((CPTColor *)object).cgColor);
     }
     else {
         return NO;
