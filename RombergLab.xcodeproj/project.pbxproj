@@ -14,7 +14,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		CF0352471C0CC44500B448CD /* Success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF0352461C0CC44500B448CD /* Success.m4a */; };
-		CF1A0B9724E2FBD700BCB5E7 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */; };
 		CF1A0B9824E2FBD700BCB5E7 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF25558C1C0B85700008C853 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF25558B1C0B85700008C853 /* Images.xcassets */; };
 		CF41733E1C10F9EE00A27AB0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */; };
@@ -100,7 +99,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		CFAF34941C11382500F72F32 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -173,7 +172,6 @@
 			files = (
 				CFC285BF1C1116DA0017601E /* QuartzCore.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				CF1A0B9724E2FBD700BCB5E7 /* CorePlot.framework in Frameworks */,
 				825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -579,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -613,6 +613,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.5.2;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ARK.RombergLab;
 				PRODUCT_NAME = RombergLab;
 				PROVISIONING_PROFILE = "";
