@@ -42,6 +42,20 @@
 
 #define cpt_deprecated __attribute__((deprecated))
 
+// Unused parameter attribute (DEBUG only)
+
+/**
+ *  @def cpt_unused
+ *  @hideinitializer
+ *  @brief Marks a parameter value as unused only in RELEASE builds.
+ **/
+
+#ifdef DEBUG
+#define cpt_unused
+#else
+#define cpt_unused __unused
+#endif
+
 // Swift wrappers
 
 /**
@@ -168,7 +182,7 @@ CPTRGBAColor;
 /**
  *  @brief Enumeration of label positioning offset directions
  **/
-typedef NS_CLOSED_ENUM (NSInteger, CPTSign) {
+typedef NS_CLOSED_ENUM(NSInteger, CPTSign) {
     CPTSignNone     = 0,  ///< No offset
     CPTSignPositive = +1, ///< Positive offset
     CPTSignNegative = -1  ///< Negative offset

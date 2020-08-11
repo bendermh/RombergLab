@@ -334,7 +334,7 @@
 
 /// @cond
 
--(void)drawRect:(CGRect)rect
+-(void)drawRect:(CGRect __unused)rect
 {
     if ( self.collapsesLayers ) {
         CGContextRef context = UIGraphicsGetCurrentContext();
@@ -347,9 +347,16 @@
     }
 }
 
--(void)graphNeedsRedraw:(nonnull NSNotification *)notification
+-(void)graphNeedsRedraw:(nonnull NSNotification *__unused)notification
 {
     [self setNeedsDisplay];
+}
+
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+{
+    [super traitCollectionDidChange:previousTraitCollection];
+
+    [self.hostedGraph setNeedsDisplayAllLayers];
 }
 
 /// @endcond

@@ -14,6 +14,7 @@
 #elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
 @property (nonatomic, readonly, nullable) UIColor *uiColorCache;
 #endif
+
 @end
 
 /// @endcond
@@ -81,6 +82,20 @@
 
 #endif
 
+/** @property nonnull CPTNativeColor *nativeColor
+ *  @brief The platform-native color to wrap around.
+ **/
+@dynamic nativeColor;
+
+-(CPTNativeColor *)nativeColor
+{
+#if TARGET_OS_OSX
+    return self.nsColor;
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    return self.uiColor;
+#endif
+}
+
 /** @property nonnull CGColorRef cgColor
  *  @brief The @ref CGColorRef to wrap around.
  **/
@@ -108,7 +123,7 @@
 @dynamic opaque;
 
 #pragma mark -
-#pragma mark Factory Methods
+#pragma mark Standard Colors
 
 /** @brief Returns a shared instance of CPTColor initialized with a fully transparent color.
  *
@@ -366,6 +381,9 @@
     return color;
 }
 
+#pragma mark -
+#pragma mark Factory Methods
+
 /** @brief Creates and returns a new CPTColor instance initialized with the provided @ref CGColorRef.
  *  @param newCGColor The color to wrap.
  *  @return A new CPTColor instance initialized with the provided @ref CGColorRef.
@@ -405,7 +423,7 @@
 
 /** @brief Creates and returns a new CPTColor instance initialized with the provided NSColor.
  *
- *  NSColor can be a dynamic system color or catalog color. This adds support for dark mode in macOS 10.14.
+ *  The NSColor can be a dynamic system color or catalog color. This adds support for Dark Mode in macOS 10.14.
  *
  *  @param newNSColor The color to wrap.
  *  @return A new CPTColor instance initialized with the provided NSColor.
@@ -419,7 +437,7 @@
 
 /** @brief Creates and returns a new CPTColor instance initialized with the provided UIColor.
  *
- *  UIColor can be a dynamic system color or catalog color. This adds support for dark mode in iOS13.
+ *  The UIColor can be a dynamic system color or catalog color. This adds support for Dark Mode in iOS 13.
  *
  *  @param newUIColor The color to wrap.
  *  @return A new CPTColor instance initialized with the provided UIColor.
@@ -430,6 +448,22 @@
 }
 
 #endif
+
+/** @brief Creates and returns a new CPTColor instance initialized with the provided platform-native color.
+ *
+ *  The color can be a dynamic system color or catalog color. This adds support for Dark Mode in iOS13.
+ *
+ *  @param newColor The color to wrap.
+ *  @return A new CPTColor instance initialized with the provided platform-native color.
+ **/
++(nonnull instancetype)colorWithNativeColor:(nonnull CPTNativeColor *)newColor
+{
+#if TARGET_OS_OSX
+    return [[self alloc] initWithNSColor:newColor];
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    return [[self alloc] initWithUIColor:newColor];
+#endif
+}
 
 #pragma mark -
 #pragma mark Init/Dealloc
@@ -474,7 +508,7 @@
 
 /** @brief Initializes a newly allocated CPTColor object with the provided NSColor.
  *
- *  NSColor can be a dynamic system color or catalog color. This adds support for dark mode in macOS 10.14.
+ *  The NSColor can be a dynamic system color or catalog color. This adds support for Dark Mode in macOS 10.14.
  *
  *  @param newNSColor The color to wrap.
  *  @return The initialized CPTColor object.
@@ -491,7 +525,7 @@
 
 /** @brief Initializes a newly allocated CPTColor object with the provided UIColor.
  *
- *  UIColor can be a dynamic system color or catalog color. This adds support for dark mode in iOS13.
+ *  The UIColor can be a dynamic system color or catalog color. This adds support for Dark Mode in iOS 13.
  *
  *  @param newUIColor The color to wrap.
  *  @return The initialized CPTColor object.
@@ -505,6 +539,22 @@
 }
 
 #endif
+
+/** @brief Initializes a newly allocated CPTColor object with the provided platform-native color.
+ *
+ *  The color can be a dynamic system color or catalog color. This adds support for Dark Mode in macOS 10.14 and iOS 13.
+ *
+ *  @param newColor The color to wrap.
+ *  @return The initialized CPTColor object.
+ **/
+-(nonnull instancetype)initWithNativeColor:(nonnull CPTNativeColor *)newColor
+{
+#if TARGET_OS_OSX
+    return [self initWithNSColor:newColor];
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
+    return [self initWithUIColor:newColor];
+#endif
+}
 
 /// @cond
 

@@ -73,6 +73,11 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
     self.locationInWindow = NSZeroPoint;
     self.scrollOffset     = CGPointZero;
 
+    [self addObserver:self
+           forKeyPath:@"effectiveAppearance"
+              options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial
+              context:CPTGraphHostingViewKVOContext];
+
     if ( !self.superview.wantsLayer ) {
         self.layer = [self makeBackingLayer];
     }
@@ -91,13 +96,6 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
     return [[CPTLayer alloc] initWithFrame:NSRectToCGRect(self.bounds)];
 }
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-
-    [self commonInit];
-}
-
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -108,6 +106,8 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
     for ( CPTPlotSpace *space in hostedGraph.allPlotSpaces ) {
         [space removeObserver:self forKeyPath:@"isDragging" context:CPTGraphHostingViewKVOContext];
     }
+
+    [self removeObserver:self forKeyPath:@"effectiveAppearance" context:CPTGraphHostingViewKVOContext];
 
     [hostedGraph removeFromSuperlayer];
 }
@@ -173,7 +173,7 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
 
 /// @cond
 
--(void)drawRect:(NSRect)dirtyRect
+-(void)drawRect:(NSRect __unused)dirtyRect
 {
     if ( self.hostedGraph ) {
         if ( ![NSGraphicsContext currentContextDrawingToScreen] ) {
@@ -229,7 +229,7 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
     return YES;
 }
 
--(NSRect)rectForPage:(NSInteger)pageNumber
+-(NSRect)rectForPage:(NSInteger __unused)pageNumber
 {
     return self.printRect;
 }
@@ -241,7 +241,7 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
 
 /// @cond
 
--(BOOL)acceptsFirstMouse:(nullable NSEvent *)theEvent
+-(BOOL)acceptsFirstMouse:(nullable NSEvent *__unused)theEvent
 {
     return YES;
 }
@@ -419,6 +419,8 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
 
 -(void)viewDidChangeBackingProperties
 {
+    [super viewDidChangeBackingProperties];
+
     NSWindow *myWindow = self.window;
 
     if ( myWindow ) {
@@ -576,6 +578,9 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
                                                              name:CPTLayerBoundsDidChangeNotification
                                                            object:newPlotArea];
             }
+        }
+        else if ( [keyPath isEqualToString:@"effectiveAppearance"] && (object == self)) {
+            [self.hostedGraph setNeedsDisplayAllLayers];
         }
     }
     else {

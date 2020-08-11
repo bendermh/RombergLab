@@ -13,8 +13,9 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		BAF523DC1F543A570084AE1B /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAF523CD1F543A2B0084AE1B /* CorePlot.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF0352471C0CC44500B448CD /* Success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CF0352461C0CC44500B448CD /* Success.m4a */; };
+		CF1A0B9724E2FBD700BCB5E7 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */; };
+		CF1A0B9824E2FBD700BCB5E7 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF25558C1C0B85700008C853 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF25558B1C0B85700008C853 /* Images.xcassets */; };
 		CF41733E1C10F9EE00A27AB0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */; };
 		CF4173481C10FB9500A27AB0 /* SecondWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4173471C10FB9500A27AB0 /* SecondWindowController.m */; };
@@ -38,58 +39,58 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BAF523CC1F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B8724E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = "CorePlot Mac";
 		};
-		BAF523CE1F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B8924E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0730F600109492D800E95162;
 			remoteInfo = "UnitTests Mac";
 		};
-		BAF523D01F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B8B24E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C38A09781A46185200D45436;
 			remoteInfo = "CorePlot iOS";
 		};
-		BAF523D21F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B8D24E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C38A09821A46185300D45436;
 			remoteInfo = "UnitTests iOS";
 		};
-		BAF523D41F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B8F24E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C38A09BA1A4619A900D45436;
 			remoteInfo = "CorePlot-CocoaTouch";
 		};
-		BAF523D61F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B9124E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C38A09C41A4619A900D45436;
 			remoteInfo = "CorePlot-CocoaTouchTests";
 		};
-		BAF523D81F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B9324E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C37EA6921BC83F2A0091C8F7;
 			remoteInfo = "CorePlot tvOS";
 		};
-		BAF523DA1F543A2B0084AE1B /* PBXContainerItemProxy */ = {
+		CF1A0B9524E2FB2A00BCB5E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+			containerPortal = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C37EA6B71BC83F2D0091C8F7;
 			remoteInfo = "UnitTests tvOS";
@@ -103,7 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BAF523DC1F543A570084AE1B /* CorePlot.framework in CopyFiles */,
+				CF1A0B9824E2FBD700BCB5E7 /* CorePlot.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +126,8 @@
 		825D9F09108BD2FD0009E075 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* RombergLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RombergLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = CorePlot/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 		CF0352461C0CC44500B448CD /* Success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Success.m4a; path = Sonidos/Success.m4a; sourceTree = "<group>"; };
+		CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = CorePlot/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 		CF25558B1C0B85700008C853 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF41733C1C10F9EE00A27AB0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CF41733D1C10F9EE00A27AB0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 			files = (
 				CFC285BF1C1116DA0017601E /* QuartzCore.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				CF1A0B9724E2FBD700BCB5E7 /* CorePlot.framework in Frameworks */,
 				825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +255,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */,
+				CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -273,21 +275,6 @@
 			path = wiiRemoteFramework;
 			sourceTree = "<group>";
 		};
-		BAF523BD1F543A2B0084AE1B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BAF523CD1F543A2B0084AE1B /* CorePlot.framework */,
-				BAF523CF1F543A2B0084AE1B /* UnitTests.xctest */,
-				BAF523D11F543A2B0084AE1B /* CorePlot.framework */,
-				BAF523D31F543A2B0084AE1B /* UnitTests iOS.xctest */,
-				BAF523D51F543A2B0084AE1B /* libCorePlot-CocoaTouch.a */,
-				BAF523D71F543A2B0084AE1B /* CorePlot-CocoaTouchTests.xctest */,
-				BAF523D91F543A2B0084AE1B /* CorePlot.framework */,
-				BAF523DB1F543A2B0084AE1B /* UnitTests tvOS.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CF0352481C0CC45700B448CD /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +283,21 @@
 				CF91D4B61C0E44AF00C0641A /* Disconnect.m4a */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		CF1A0B7824E2FB2A00BCB5E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */,
+				CF1A0B8A24E2FB2A00BCB5E7 /* UnitTests.xctest */,
+				CF1A0B8C24E2FB2A00BCB5E7 /* CorePlot.framework */,
+				CF1A0B8E24E2FB2A00BCB5E7 /* UnitTests iOS.xctest */,
+				CF1A0B9024E2FB2A00BCB5E7 /* libCorePlot-CocoaTouch.a */,
+				CF1A0B9224E2FB2A00BCB5E7 /* CorePlot-CocoaTouchTests.xctest */,
+				CF1A0B9424E2FB2A00BCB5E7 /* CorePlot.framework */,
+				CF1A0B9624E2FB2A00BCB5E7 /* UnitTests tvOS.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF4173491C10FBBF00A27AB0 /* ViewControllers */ = {
@@ -360,7 +362,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = ARK;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -391,8 +393,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = BAF523BD1F543A2B0084AE1B /* Products */;
-					ProjectRef = BAF523BC1F543A2B0084AE1B /* CorePlot.xcodeproj */;
+					ProductGroup = CF1A0B7824E2FB2A00BCB5E7 /* Products */;
+					ProjectRef = CF1A0B7724E2FB2A00BCB5E7 /* CorePlot.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -403,60 +405,60 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		BAF523CD1F543A2B0084AE1B /* CorePlot.framework */ = {
+		CF1A0B8824E2FB2A00BCB5E7 /* CorePlot.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CorePlot.framework;
-			remoteRef = BAF523CC1F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B8724E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523CF1F543A2B0084AE1B /* UnitTests.xctest */ = {
+		CF1A0B8A24E2FB2A00BCB5E7 /* UnitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UnitTests.xctest;
-			remoteRef = BAF523CE1F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B8924E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523D11F543A2B0084AE1B /* CorePlot.framework */ = {
+		CF1A0B8C24E2FB2A00BCB5E7 /* CorePlot.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CorePlot.framework;
-			remoteRef = BAF523D01F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B8B24E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523D31F543A2B0084AE1B /* UnitTests iOS.xctest */ = {
+		CF1A0B8E24E2FB2A00BCB5E7 /* UnitTests iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "UnitTests iOS.xctest";
-			remoteRef = BAF523D21F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B8D24E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523D51F543A2B0084AE1B /* libCorePlot-CocoaTouch.a */ = {
+		CF1A0B9024E2FB2A00BCB5E7 /* libCorePlot-CocoaTouch.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libCorePlot-CocoaTouch.a";
-			remoteRef = BAF523D41F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B8F24E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523D71F543A2B0084AE1B /* CorePlot-CocoaTouchTests.xctest */ = {
+		CF1A0B9224E2FB2A00BCB5E7 /* CorePlot-CocoaTouchTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "CorePlot-CocoaTouchTests.xctest";
-			remoteRef = BAF523D61F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B9124E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523D91F543A2B0084AE1B /* CorePlot.framework */ = {
+		CF1A0B9424E2FB2A00BCB5E7 /* CorePlot.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CorePlot.framework;
-			remoteRef = BAF523D81F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B9324E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAF523DB1F543A2B0084AE1B /* UnitTests tvOS.xctest */ = {
+		CF1A0B9624E2FB2A00BCB5E7 /* UnitTests tvOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "UnitTests tvOS.xctest";
-			remoteRef = BAF523DA1F543A2B0084AE1B /* PBXContainerItemProxy */;
+			remoteRef = CF1A0B9524E2FB2A00BCB5E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -543,6 +545,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 01;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = S5T2URH846;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
@@ -564,7 +567,7 @@
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ARK.RombergLab;
 				PRODUCT_NAME = RombergLab;
 				PROVISIONING_PROFILE = "";
@@ -588,6 +591,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 01;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = S5T2URH846;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
@@ -608,7 +612,7 @@
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ARK.RombergLab;
 				PRODUCT_NAME = RombergLab;
 				PROVISIONING_PROFILE = "";
@@ -633,6 +637,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -673,6 +678,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
