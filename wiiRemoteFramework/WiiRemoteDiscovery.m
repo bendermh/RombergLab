@@ -6,6 +6,7 @@
 //  Copyright 2006 __MyCompanyName__. All rights reserved.
 //
 
+#import <IOBluetooth/objc/IOBluetoothDevice.h>
 #import "WiiRemoteDiscovery.h"
 
 
@@ -19,13 +20,13 @@
 		// cam: calling IOBluetoothLocalDeviceAvailable has two advantages:
 		// 1. it sets up a event source in the run loop (bug for C version of the bluetooth api )
 		// 2. it checks for the availability of the BT hardware
-//		if (!IOBluetoothLocalDeviceAvailable ())
-//		{
-//			[self release];
-//			self = nil;
-//
-////			[NSException raise:NSGenericException format:@"Bluetooth hardware not available"];
-//		}
+		if (!IOBluetoothLocalDeviceAvailable ())
+		{
+			[self release];
+			self = nil;
+			
+//			[NSException raise:NSGenericException format:@"Bluetooth hardware not available"];
+		}		
 	}
 	
 	return self;
@@ -58,9 +59,9 @@
 - (IOReturn) start
 {
 	// cam: check everytime the presence of the bluetooth hardware,
-//	// we don't know if the user has not turned it off meanwhile
-//	if (!IOBluetoothLocalDeviceAvailable ())
-//		return kIOReturnNotAttached;
+	// we don't know if the user has not turned it off meanwhile
+	if (!IOBluetoothLocalDeviceAvailable ())
+		return kIOReturnNotAttached;
 	
 	// if we are currently discovering, we can't start a new discovery right now.
 	if ([self isDiscovering])
