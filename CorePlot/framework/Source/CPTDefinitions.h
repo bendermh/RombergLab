@@ -42,6 +42,16 @@
 
 #define cpt_deprecated __attribute__((deprecated))
 
+// Requires super method attribute
+
+/**
+ *  @def cpt_requires_super
+ *  @hideinitializer
+ *  @brief Marks a method as requiring a call to the superclass.
+ **/
+
+#define cpt_requires_super __attribute__((objc_requires_super))
+
 // Unused parameter attribute (DEBUG only)
 
 /**
@@ -271,12 +281,12 @@ typedef NSArray<NSValue *> CPTValueArray;
 typedef NSMutableArray<NSValue *> CPTMutableValueArray;
 
 /**
- *  @brief An array of strings.
+ *  @brief A dictionary with string keys and object values.
  **/
 typedef NSDictionary<NSString *, id> CPTDictionary;
 
 /**
- *  @brief A mutable array of strings.
+ *  @brief A mutable dictionary with string keys and object values.
  **/
 typedef NSMutableDictionary<NSString *, id> CPTMutableDictionary;
 

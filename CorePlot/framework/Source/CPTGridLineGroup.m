@@ -114,7 +114,10 @@
         return;
     }
 
+    [super renderAsVectorInContext:context];
+
     CPTPlotArea *thePlotArea = self.plotArea;
+
     for ( CPTAxis *axis in thePlotArea.axisSet.axes ) {
         if ( !axis.separateLayers ) {
             [axis drawGridLinesInContext:context isMajor:self.major];

@@ -73,10 +73,15 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
     self.locationInWindow = NSZeroPoint;
     self.scrollOffset     = CGPointZero;
 
-    [self addObserver:self
-           forKeyPath:@"effectiveAppearance"
-              options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial
-              context:CPTGraphHostingViewKVOContext];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    if ( [[self class] instancesRespondToSelector:@selector(effectiveAppearance)] ) {
+        [self addObserver:self
+               forKeyPath:@"effectiveAppearance"
+                  options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial
+                  context:CPTGraphHostingViewKVOContext];
+    }
+#pragma clang diagnostic pop
 
     if ( !self.superview.wantsLayer ) {
         self.layer = [self makeBackingLayer];
@@ -107,7 +112,12 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
         [space removeObserver:self forKeyPath:@"isDragging" context:CPTGraphHostingViewKVOContext];
     }
 
-    [self removeObserver:self forKeyPath:@"effectiveAppearance" context:CPTGraphHostingViewKVOContext];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    if ( [[self class] instancesRespondToSelector:@selector(effectiveAppearance)] ) {
+        [self removeObserver:self forKeyPath:@"effectiveAppearance" context:CPTGraphHostingViewKVOContext];
+    }
+#pragma clang diagnostic pop
 
     [hostedGraph removeFromSuperlayer];
 }
@@ -205,7 +215,7 @@ static void *CPTGraphHostingViewKVOContext = (void *)&CPTGraphHostingViewKVOCont
             [transform concat];
 
             // render CPTLayers recursively into the graphics context used for printing
-            // (thanks to Brad for the tip: http://stackoverflow.com/a/2791305/132867 )
+            // (thanks to Brad for the tip: https://stackoverflow.com/a/2791305/132867 )
             CGContextRef context = graphicsContext.graphicsPort;
             [self.hostedGraph recursivelyRenderInContext:context];
 

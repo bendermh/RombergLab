@@ -1,7 +1,7 @@
 #import "CPTPlatformSpecificCategories.h"
 
 #import "CPTPlatformSpecificFunctions.h"
-#import "tgmath.h"
+#import <tgmath.h>
 
 #pragma mark - CPTLayer
 
@@ -17,6 +17,7 @@
     UIGraphicsBeginImageContextWithOptions(boundsSize, self.opaque, CPTFloat(0.0));
 
     CGContextRef context = UIGraphicsGetCurrentContext();
+
     CGContextSaveGState(context);
     CGContextSetAllowsAntialiasing(context, true);
 
@@ -25,6 +26,7 @@
 
     [self layoutAndRenderInContext:context];
     CPTNativeImage *layerImage = UIGraphicsGetImageFromCurrentImageContext();
+
     CGContextSetAllowsAntialiasing(context, false);
 
     CGContextRestoreGState(context);

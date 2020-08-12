@@ -725,6 +725,7 @@ CPTScatterPlotBinding const CPTScatterPlotBindingPlotSymbols = @"plotSymbols"; /
     [self calculateViewPoints:viewPoints withDrawPointFlags:drawPointFlags numberOfPoints:dataCount];
 
     NSInteger result = [self extremeDrawnPointIndexForFlags:drawPointFlags numberOfPoints:dataCount extremeNumIsLowerBound:YES];
+
     if ( result != NSNotFound ) {
         CGFloat minimumDistanceSquared = CPTNAN;
         for ( NSUInteger i = (NSUInteger)result; i < dataCount; ++i ) {
@@ -791,6 +792,7 @@ CPTScatterPlotBinding const CPTScatterPlotBindingPlotSymbols = @"plotSymbols"; /
         return;
     }
     NSUInteger dataCount = self.cachedDataCount;
+
     if ( dataCount == 0 ) {
         return;
     }
@@ -808,10 +810,12 @@ CPTScatterPlotBinding const CPTScatterPlotBindingPlotSymbols = @"plotSymbols"; /
     BOOL *drawPointFlags = calloc(dataCount, sizeof(BOOL));
 
     CPTXYPlotSpace *thePlotSpace = (CPTXYPlotSpace *)self.plotSpace;
+
     [self calculatePointsToDraw:drawPointFlags forPlotSpace:thePlotSpace includeVisiblePointsOnly:NO numberOfPoints:dataCount];
     [self calculateViewPoints:viewPoints withDrawPointFlags:drawPointFlags numberOfPoints:dataCount];
 
     BOOL pixelAlign = self.alignsPointsToPixels;
+
     if ( pixelAlign ) {
         [self alignViewPointsToUserSpace:viewPoints withContext:context drawPointFlags:drawPointFlags numberOfPoints:dataCount];
     }
@@ -1471,7 +1475,7 @@ CPTScatterPlotBinding const CPTScatterPlotBindingPlotSymbols = @"plotSymbols"; /
     return YES;
 }
 
-// Compute the control points using the algorithm described at http://www.particleincell.com/blog/2012/bezier-splines/
+// Compute the control points using the algorithm described at https://www.particleincell.com/blog/2012/bezier-splines/
 // cp1, cp2, and viewPoints should point to arrays of points with at least NSMaxRange(indexRange) elements each.
 -(void)computeBezierControlPoints:(nonnull CGPoint *)cp1 points2:(nonnull CGPoint *)cp2 forViewPoints:(nonnull CGPoint *)viewPoints indexRange:(NSRange)indexRange
 {
@@ -1631,6 +1635,7 @@ CPTScatterPlotBinding const CPTScatterPlotBindingPlotSymbols = @"plotSymbols"; /
     [self reloadDataIfNeeded];
 
     NSUInteger dataCount = self.cachedDataCount;
+
     if ( dataCount == 0 ) {
         return CGPathCreateMutable();
     }

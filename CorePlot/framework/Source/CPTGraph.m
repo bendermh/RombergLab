@@ -395,6 +395,7 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
         [super layoutAndRenderInContext:context];
     }
 #else
+#ifdef __IPHONE_13_0
     if ( @available(iOS 13, *)) {
         if ( [UITraitCollection instancesRespondToSelector:@selector(performAsCurrentTraitCollection:)] ) {
             UITraitCollection *traitCollection = ((UIView *)self.hostingView).traitCollection;
@@ -414,6 +415,9 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
     else {
         [super layoutAndRenderInContext:context];
     }
+#else
+    [super layoutAndRenderInContext:context];
+#endif
 #endif
 #pragma clang diagnostic pop
 }
@@ -1101,6 +1105,7 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
     // Plot spaces do not block events, because several spaces may need to receive
     // the same event sequence (e.g., dragging coordinate translation)
     BOOL handledEvent = NO;
+
     for ( CPTPlotSpace *space in self.plotSpaces ) {
         BOOL handled = [space pointingDeviceDownEvent:event atPoint:interactionPoint];
         handledEvent |= handled;
@@ -1227,6 +1232,7 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
     // Plot spaces do not block events, because several spaces may need to receive
     // the same event sequence (e.g., dragging coordinate translation)
     BOOL handledEvent = NO;
+
     for ( CPTPlotSpace *space in self.plotSpaces ) {
         BOOL handled = [space pointingDeviceDraggedEvent:event atPoint:interactionPoint];
         handledEvent |= handled;
@@ -1286,6 +1292,7 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
 
     // Plot spaces
     BOOL handledEvent = NO;
+
     for ( CPTPlotSpace *space in self.plotSpaces ) {
         BOOL handled = [space pointingDeviceCancelledEvent:event];
         handledEvent |= handled;
@@ -1347,6 +1354,7 @@ CPTGraphPlotSpaceKey const CPTGraphPlotSpaceNotificationKey       = @"CPTGraphPl
 
     // Plot spaces
     BOOL handledEvent = NO;
+
     for ( CPTPlotSpace *space in self.plotSpaces ) {
         BOOL handled = [space scrollWheelEvent:event fromPoint:fromPoint toPoint:toPoint];
         handledEvent |= handled;
